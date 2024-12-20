@@ -1002,8 +1002,6 @@ local ToggleAutoFarm = AutoFarmTab:CreateToggle({
     end,
 })
 
-local Section = AutoFarmTab:CreateSection("Auto Elder")
-
 local player = game.Players.LocalPlayer
 local userId = player.UserId
 local character = player.Character or player.CharacterAdded:Wait()
@@ -1012,7 +1010,7 @@ local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
 local autoElderEnabled = false
 local floating = false
 local vehicleGyro, vehicleVelocity
-local vehicleFloatSpeed = 0.1 -- Default reduced speed for smoother floating
+local vehicleFloatSpeed = 80 -- Default float speed for Default Dino
 local floatForce = 50000000 -- Medium float force
 local antiAFKEnabled = false -- Initial state of the anti-AFK
 
@@ -1179,6 +1177,24 @@ local Toggle = AutoFarmTab:CreateToggle({
     Flag = "AutoElderToggle",
     Callback = function(value)
         onAutoElderToggle(value)
+    end,
+})
+
+-- Add the Float Speed dropdown to the UI
+local Dropdown = AutoFarmTab:CreateDropdown({
+    Name = "Dinosaur Type",
+    Options = {"Default Dino", "Heavy Herbivores|Heavy Carnivores"},
+    CurrentOption = "Default Dino",
+    MultipleOptions = false,
+    Flag = "DinoTypeDropdown",
+    Callback = function(option)
+        if option == "Default Dino" then
+            vehicleFloatSpeed = 80
+        elseif option == "Heavy Herbivores|Heavy Carnivores" then
+            vehicleFloatSpeed = 90
+        else
+            print("Invalid option selected.")
+        end
     end,
 })
 
