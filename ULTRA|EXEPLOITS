@@ -1,12 +1,1926 @@
---[[
- .____                  ________ ___.    _____                           __                
- |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
- |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
- |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
- |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
-         \/          \/         \/    \/                \/     \/     \/                   
-          \_Welcome to LuaObfuscator.com   (Alpha 0.10.8) ~  Much Love, Ferib 
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-]]--
+local Window = Rayfield:CreateWindow({
+    Name = "ExePloits",
+    Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+    LoadingTitle = "Exeploits",
+    LoadingSubtitle = "by Sonic|Exetior",
+    Theme = { -- Custom Theme Configuration for Dark Blue
+        TextColor = Color3.fromRGB(240, 240, 240),
+        Background = Color3.fromRGB(0, 38, 70), -- Dark Blue Background
+        Topbar = Color3.fromRGB(0, 48, 82),
+        Shadow = Color3.fromRGB(0, 28, 52),
+        NotificationBackground = Color3.fromRGB(0, 28, 52),
+        NotificationActionsBackground = Color3.fromRGB(0, 68, 112),
+        TabBackground = Color3.fromRGB(0, 68, 112),
+        TabStroke = Color3.fromRGB(0, 78, 132),
+        TabBackgroundSelected = Color3.fromRGB(0, 88, 152),
+        TabTextColor = Color3.fromRGB(240, 240, 240),
+        SelectedTabTextColor = Color3.fromRGB(50, 50, 50),
+        ElementBackground = Color3.fromRGB(0, 38, 70),
+        ElementBackgroundHover = Color3.fromRGB(0, 48, 82),
+        SecondaryElementBackground = Color3.fromRGB(0, 28, 52),
+        ElementStroke = Color3.fromRGB(0, 58, 102),
+        SecondaryElementStroke = Color3.fromRGB(0, 68, 112),
+        SliderBackground = Color3.fromRGB(0, 108, 192),
+        SliderProgress = Color3.fromRGB(0, 128, 232),
+        SliderStroke = Color3.fromRGB(0, 148, 272),
+        ToggleBackground = Color3.fromRGB(0, 38, 70),
+        ToggleEnabled = Color3.fromRGB(0, 138, 214),
+        ToggleDisabled = Color3.fromRGB(100, 100, 100),
+        ToggleEnabledStroke = Color3.fromRGB(0, 168, 255),
+        ToggleDisabledStroke = Color3.fromRGB(125, 125, 125),
+        ToggleEnabledOuterStroke = Color3.fromRGB(100, 100, 100),
+        ToggleDisabledOuterStroke = Color3.fromRGB(65, 65, 65),
+        DropdownSelected = Color3.fromRGB(0, 48, 82),
+        DropdownUnselected = Color3.fromRGB(0, 28, 52),
+        InputBackground = Color3.fromRGB(0, 28, 52),
+        InputStroke = Color3.fromRGB(0, 68, 112),
+        PlaceholderColor = Color3.fromRGB(178, 178, 178)
+    },
+ 
+    DisableRayfieldPrompts = false,
+    DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
+ 
+    ConfigurationSaving = {
+       Enabled = true,
+       FolderName = nil, -- Create a custom folder for your hub/game
+       FileName = "Big Hub"
+    },
+ 
+    Discord = {
+       Enabled = false, -- Prompt the user to join your Discord server if their executor supports it
+       Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+       RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+    },
+ 
+    KeySystem = false, -- Set this to true to use our key system
+    KeySettings = {
+       Title = "Untitled",
+       Subtitle = "Key System",
+       Note = "No method of obtaining the key is provided", -- Use this to tell the user how to get a key
+       FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+       SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+       GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+       Key = {"Hello"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+    }
+ })
 
-local v0=loadstring(game:HttpGet("https://sirius.menu/rayfield"))();local v1=v0:CreateWindow({Name="ExePloits",Icon=0,LoadingTitle="Exeploits",LoadingSubtitle="by Sonic|Exetior",Theme={TextColor=Color3.fromRGB(240,240,240),Background=Color3.fromRGB(0,38,70),Topbar=Color3.fromRGB(0,48,82),Shadow=Color3.fromRGB(0,28,52),NotificationBackground=Color3.fromRGB(0,28,52),NotificationActionsBackground=Color3.fromRGB(0,68,112),TabBackground=Color3.fromRGB(0,68,112),TabStroke=Color3.fromRGB(0,78,132),TabBackgroundSelected=Color3.fromRGB(0,88,152),TabTextColor=Color3.fromRGB(240,240,240),SelectedTabTextColor=Color3.fromRGB(50,50,50),ElementBackground=Color3.fromRGB(0,38,70),ElementBackgroundHover=Color3.fromRGB(0,48,82),SecondaryElementBackground=Color3.fromRGB(0,28,52),ElementStroke=Color3.fromRGB(0,58,102),SecondaryElementStroke=Color3.fromRGB(0,68,112),SliderBackground=Color3.fromRGB(0,108,192),SliderProgress=Color3.fromRGB(0,128,232),SliderStroke=Color3.fromRGB(0,148,272),ToggleBackground=Color3.fromRGB(0,38,70),ToggleEnabled=Color3.fromRGB(0,138,214),ToggleDisabled=Color3.fromRGB(100,100,100),ToggleEnabledStroke=Color3.fromRGB(0,168,255),ToggleDisabledStroke=Color3.fromRGB(125,125,125),ToggleEnabledOuterStroke=Color3.fromRGB(100,100,100),ToggleDisabledOuterStroke=Color3.fromRGB(65,65,65),DropdownSelected=Color3.fromRGB(0,48,82),DropdownUnselected=Color3.fromRGB(0,28,52),InputBackground=Color3.fromRGB(0,28,52),InputStroke=Color3.fromRGB(0,68,112),PlaceholderColor=Color3.fromRGB(178,178,178)},DisableRayfieldPrompts=false,DisableBuildWarnings=false,ConfigurationSaving={Enabled=true,FolderName=nil,FileName="Big Hub"},Discord={Enabled=false,Invite="noinvitelink",RememberJoins=true},KeySystem=false,KeySettings={Title="Untitled",Subtitle="Key System",Note="No method of obtaining the key is provided",FileName="Key",SaveKey=true,GrabKeyFromSite=false,Key={"Hello"}}});v0:Notify({Title="if Ui Restarts its Normal!",Content="Bypassed Boi",Duration=6.5,Image=4483362458});local v2=v1:CreateTab("Player|Functions",4483362458);local v3=game.Players.LocalPlayer;local v4=0.9;local v5=false;local v6=nil;local v7=nil;local function v8(v98) if v98 then v5=true;local v303=v3.Character or v3.CharacterAdded:Wait() ;local v304=v303:WaitForChild("HumanoidRootPart");v6=Instance.new("BodyGyro");v6.P=90000;v6.Parent=v304;v7=Instance.new("BodyVelocity");v7.Velocity=Vector3.new(0,0,0);v7.MaxForce=Vector3.new(8999999488,8999999488,8999999488);v7.Parent=v304;local v310=game.UserInputService.TouchEnabled and  not game.UserInputService.KeyboardEnabled ;local v311;v311=game:GetService("RunService").Stepped:Connect(function() if  not v5 then v311:Disconnect();return;end v7.Velocity=Vector3.new(0,0,0);if v310 then local v414=game.UserInputService:GetDeviceRotation();v7.Velocity=v414.LookVector * v4 ;elseif game.UserInputService:IsKeyDown(Enum.KeyCode.W) then v7.Velocity=workspace.CurrentCamera.CFrame.LookVector * v4 ;elseif game.UserInputService:IsKeyDown(Enum.KeyCode.S) then v7.Velocity= -workspace.CurrentCamera.CFrame.LookVector * v4 ;elseif game.UserInputService:IsKeyDown(Enum.KeyCode.A) then v7.Velocity= -workspace.CurrentCamera.CFrame.RightVector * v4 ;elseif game.UserInputService:IsKeyDown(Enum.KeyCode.D) then v7.Velocity=workspace.CurrentCamera.CFrame.RightVector * v4 ;elseif game.UserInputService:IsKeyDown(Enum.KeyCode.Space) then v7.Velocity=Vector3.new(0,v4,0);elseif game.UserInputService:IsKeyDown(Enum.KeyCode.LeftShift) then v7.Velocity=Vector3.new(0, -v4,0);end v6.CFrame=workspace.CurrentCamera.CFrame;end);else v5=false;if v6 then v6:Destroy();v6=nil;end if v7 then v7:Destroy();v7=nil;end end end local v9=v2:CreateToggle({Name="Fly",CurrentValue=false,Flag="Toggle1",Callback=function(v99) v8(v99);end});local function v10(v100) v4=v100;end local v11=v2:CreateInput({Name="Fly Speed",CurrentValue="",PlaceholderText="Fly Speed?",RemoveTextAfterFocusLost=false,Flag="Input1",Callback=function(v101) local v102=tonumber(v101);if v102 then v10(v102);end end});local v12=v2:CreateSection("ESP");getgenv().enabled=true;getgenv().filluseteamcolor=true;getgenv().outlineuseteamcolor=true;getgenv().fillcolor=Color3.new(0,0,0);getgenv().outlinecolor=Color3.new(1,1,1);getgenv().filltrans=1;getgenv().outlinetrans=0;local v20=loadstring(game:HttpGet("https://raw.githubusercontent.com/zntly/highlight-esp/main/esp.lua"));local v21=false;local function v22(v103,v104,v105,v106,v107) getgenv().filltrans=v103 or getgenv().filltrans ;getgenv().fillcolor=v104 or getgenv().fillcolor ;getgenv().outlinecolor=v105 or getgenv().outlinecolor ;getgenv().outlineuseteamcolor=v106 or getgenv().outlineuseteamcolor ;getgenv().filluseteamcolor=v107 or getgenv().filluseteamcolor ;end local function v23(v113) if  not v113:FindFirstChildOfClass("Humanoid") then return;end local v114=v113:FindFirstChild("HumanoidRootPart") or v113:FindFirstChild("Torso") or v113:FindFirstChild("UpperTorso") ;if v114 then v20();end end local function v24(v115) if v115:FindFirstChild("Highlight") then v115.Highlight:Destroy();end if v115:FindFirstChild("BillboardGui") then v115.BillboardGui:Destroy();end end local function v25(v116) if v21 then v23(v116);end end local function v26(v117) v117.CharacterAdded:Connect(v25);if v117.Character then v25(v117.Character);end end local function v27(v118) if v118.Character then v24(v118.Character);end end for v119,v120 in pairs(game.Players:GetPlayers()) do v26(v120);end game.Players.PlayerAdded:Connect(v26);game.Players.PlayerRemoving:Connect(v27);local function v28(v121) v21=v121;getgenv().enabled=v121;if v21 then for v362,v363 in pairs(game.Players:GetPlayers()) do if v363.Character then v23(v363.Character);end end else for v364,v365 in pairs(game.Players:GetPlayers()) do if v365.Character then v24(v365.Character);end end end end local v9=v2:CreateToggle({Name="Dinosaur ESP",CurrentValue=false,Flag="Toggle1",Callback=function(v123) v28(v123);end});v2:CreateSlider({Name="Fill Transparency",Range={0,1},Increment=0.1,Suffix="Transparency",CurrentValue=1,Flag="FillTransparency",Callback=function(v124) v22(v124);end});local v0=loadstring(game:HttpGet("https://sirius.menu/rayfield"))();local v1=v0:CreateWindow({Name="ExePloits",Icon=0,LoadingTitle="I AM|Exe LOL",LoadingSubtitle="by Sonic|Exetior",Theme={TextColor=Color3.fromRGB(240,240,240),Background=Color3.fromRGB(0,38,70),Topbar=Color3.fromRGB(0,48,82),Shadow=Color3.fromRGB(0,28,52),NotificationBackground=Color3.fromRGB(0,28,52),NotificationActionsBackground=Color3.fromRGB(0,68,112),TabBackground=Color3.fromRGB(0,68,112),TabStroke=Color3.fromRGB(0,78,132),TabBackgroundSelected=Color3.fromRGB(0,88,152),TabTextColor=Color3.fromRGB(240,240,240),SelectedTabTextColor=Color3.fromRGB(50,50,50),ElementBackground=Color3.fromRGB(0,38,70),ElementBackgroundHover=Color3.fromRGB(0,48,82),SecondaryElementBackground=Color3.fromRGB(0,28,52),ElementStroke=Color3.fromRGB(0,58,102),SecondaryElementStroke=Color3.fromRGB(0,68,112),SliderBackground=Color3.fromRGB(0,108,192),SliderProgress=Color3.fromRGB(0,128,232),SliderStroke=Color3.fromRGB(0,148,272),ToggleBackground=Color3.fromRGB(0,38,70),ToggleEnabled=Color3.fromRGB(0,138,214),ToggleDisabled=Color3.fromRGB(100,100,100),ToggleEnabledStroke=Color3.fromRGB(0,168,255),ToggleDisabledStroke=Color3.fromRGB(125,125,125),ToggleEnabledOuterStroke=Color3.fromRGB(100,100,100),ToggleDisabledOuterStroke=Color3.fromRGB(65,65,65),DropdownSelected=Color3.fromRGB(0,48,82),DropdownUnselected=Color3.fromRGB(0,28,52),InputBackground=Color3.fromRGB(0,28,52),InputStroke=Color3.fromRGB(0,68,112),PlaceholderColor=Color3.fromRGB(178,178,178)},DisableRayfieldPrompts=false,DisableBuildWarnings=false,ConfigurationSaving={Enabled=true,FolderName=nil,FileName="Big Hub"},Discord={Enabled=false,Invite="noinvitelink",RememberJoins=true},KeySystem=false,KeySettings={Title="Untitled",Subtitle="Key System",Note="No method of obtaining the key is provided",FileName="Key",SaveKey=true,GrabKeyFromSite=false,Key={"Hello"}}});v0:Notify({Title="Bypassing....",Content="Bypassed Boi",Duration=6.5,Image=4483362458});local v2=v1:CreateTab("Player|Functions",4483362458);local v3=game.Players.LocalPlayer;local v4=0.9;local v5=false;local v6=nil;local v7=nil;local function v8(v125) if v125 then v5=true;local v312=v3.Character or v3.CharacterAdded:Wait() ;local v313=v312:WaitForChild("HumanoidRootPart");v6=Instance.new("BodyGyro");v6.P=90000;v6.Parent=v313;v7=Instance.new("BodyVelocity");v7.Velocity=Vector3.new(0,0,0);v7.MaxForce=Vector3.new(8999999488,8999999488,8999999488);v7.Parent=v313;local v319=game.UserInputService.TouchEnabled and  not game.UserInputService.KeyboardEnabled ;local v320;v320=game:GetService("RunService").Stepped:Connect(function() if  not v5 then v320:Disconnect();return;end v7.Velocity=Vector3.new(0,0,0);if v319 then local v416=game.UserInputService:GetDeviceRotation();v7.Velocity=v416.LookVector * v4 ;elseif game.UserInputService:IsKeyDown(Enum.KeyCode.W) then v7.Velocity=workspace.CurrentCamera.CFrame.LookVector * v4 ;elseif game.UserInputService:IsKeyDown(Enum.KeyCode.S) then v7.Velocity= -workspace.CurrentCamera.CFrame.LookVector * v4 ;elseif game.UserInputService:IsKeyDown(Enum.KeyCode.A) then v7.Velocity= -workspace.CurrentCamera.CFrame.RightVector * v4 ;elseif game.UserInputService:IsKeyDown(Enum.KeyCode.D) then v7.Velocity=workspace.CurrentCamera.CFrame.RightVector * v4 ;elseif game.UserInputService:IsKeyDown(Enum.KeyCode.Space) then v7.Velocity=Vector3.new(0,v4,0);elseif game.UserInputService:IsKeyDown(Enum.KeyCode.LeftShift) then v7.Velocity=Vector3.new(0, -v4,0);end v6.CFrame=workspace.CurrentCamera.CFrame;end);else v5=false;if v6 then v6:Destroy();v6=nil;end if v7 then v7:Destroy();v7=nil;end end end local v9=v2:CreateToggle({Name="Fly",CurrentValue=false,Flag="Toggle1",Callback=function(v126) v8(v126);end});local function v10(v127) v4=v127;end local v11=v2:CreateInput({Name="Fly Speed",CurrentValue="",PlaceholderText="Fly Speed?",RemoveTextAfterFocusLost=false,Flag="Input1",Callback=function(v128) local v129=tonumber(v128);if v129 then v10(v129);end end});local v29=false;local function v30() local v130=game:GetService("Workspace"):FindFirstChild("GameMap"):FindFirstChild("Decorations"):FindFirstChild("Monster Madness Area");local v131=v130 and v130:FindFirstChild("Water") ;if v131 then local v321=v131;local v322=game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.p;local v323=game:GetService("Workspace").GameEvents.addThirst;v323:FireServer(v321,v322);else print("Water part not found in Monster Madness Area.");end end local function v31() while v29 do wait(0.1);local v263=game.Workspace:FindFirstChild("FernStorage");local v264=v263 and v263:FindFirstChild("Fern") ;if v264 then print("Fern found in FernStorage, firing EatPlant event and simulating drinking water.");game.Workspace.GameEvents.EatPlant:FireServer(v264,10);v30();else print("Fern not found in FernStorage.");end end end local function v32() if  not v29 then print("Starting hunger loop.");v29=true;spawn(v31);else print("Hunger loop already running.");end end local function v33() if v29 then print("Stopping hunger loop.");v29=false;else print("Hunger loop is not running.");end end local function v34(v132) if v132 then v32();else v33();end end local v9=v2:CreateToggle({Name="Manage Hunger and Thirst",CurrentValue=false,Flag="Toggle1",Callback=function(v133) v34(v133);end});local v12=v2:CreateSection("ESP");getgenv().enabled=true;getgenv().filluseteamcolor=true;getgenv().outlineuseteamcolor=true;getgenv().fillcolor=Color3.new(0,0,0);getgenv().outlinecolor=Color3.new(1,1,1);getgenv().filltrans=1;getgenv().outlinetrans=0;local v20=loadstring(game:HttpGet("https://raw.githubusercontent.com/zntly/highlight-esp/main/esp.lua"));local v21=false;local function v22(v134,v135,v136,v137,v138) getgenv().filltrans=v134 or getgenv().filltrans ;getgenv().fillcolor=v135 or getgenv().fillcolor ;getgenv().outlinecolor=v136 or getgenv().outlinecolor ;getgenv().outlineuseteamcolor=v137 or getgenv().outlineuseteamcolor ;getgenv().filluseteamcolor=v138 or getgenv().filluseteamcolor ;end local function v23(v144) if  not v144:FindFirstChildOfClass("Humanoid") then return;end local v145=v144:FindFirstChild("HumanoidRootPart") or v144:FindFirstChild("Torso") or v144:FindFirstChild("UpperTorso") ;if v145 then v20();end end local function v24(v146) if v146:FindFirstChild("Highlight") then v146.Highlight:Destroy();end if v146:FindFirstChild("BillboardGui") then v146.BillboardGui:Destroy();end end local function v25(v147) if v21 then v23(v147);end end local function v26(v148) v148.CharacterAdded:Connect(v25);if v148.Character then v25(v148.Character);end end local function v27(v149) if v149.Character then v24(v149.Character);end end for v150,v151 in pairs(game.Players:GetPlayers()) do v26(v151);end game.Players.PlayerAdded:Connect(v26);game.Players.PlayerRemoving:Connect(v27);local function v28(v152) v21=v152;getgenv().enabled=v152;if v21 then for v369,v370 in pairs(game.Players:GetPlayers()) do if v370.Character then v23(v370.Character);end end else for v371,v372 in pairs(game.Players:GetPlayers()) do if v372.Character then v24(v372.Character);end end end end local v9=v2:CreateToggle({Name="Dinosaur ESP",CurrentValue=false,Flag="Toggle1",Callback=function(v154) v28(v154);end});v2:CreateSlider({Name="Fill Transparency",Range={0,1},Increment=0.1,Suffix="Transparency",CurrentValue=1,Flag="FillTransparency",Callback=function(v155) v22(v155);end});local v12=v2:CreateSection("Put Skins|Dinos in Inventory");local function v35(v156) local v157=game.Players.LocalPlayer;local v158=v157:FindFirstChild("MemoryCard");if  not v158 then v158=Instance.new("Folder");v158.Name="MemoryCard";v158.Parent=v157;print("Created new MemoryCard folder");end local v159=v158:FindFirstChild("Tokens");if  not v159 then v159=Instance.new("Folder");v159.Name="Tokens";v159.Parent=v158;print("Created new Tokens folder");end local v160=v159:FindFirstChild(v156);if  not v160 then v160=Instance.new("IntValue");v160.Name=v156;v160.Parent=v159;print("Simulated token ownership of dinosaur:",v156);else print("Dinosaur token already exists for:",v156);end local v161=game:GetService("ReplicatedStorage");local v162=v161:FindFirstChild("Database");if v162 then local v330=v162:FindFirstChild("Dinosaurs");if v330 then local v397=v330:FindFirstChild(v156);if v397 then local v419=v158:FindFirstChild("Dinosaurs");if  not v419 then v419=Instance.new("Folder");v419.Name="Dinosaurs";v419.Parent=v158;print("Created new Dinosaurs folder in MemoryCard");end if  not v419:FindFirstChild(v156) then local v433=v397:Clone();v433.Parent=v419;print("Moved dinosaur folder to MemoryCard->Dinosaurs:",v156);else print("Dinosaur folder already exists in MemoryCard->Dinosaurs:",v156);end else warn("Dinosaur folder not found in ReplicatedStorage:",v156);end else warn("Dinosaurs folder not found in Database");end else warn("Database folder not found in ReplicatedStorage");end end local v11=v2:CreateInput({Name="Enter Dinosaur Name",CurrentValue="",PlaceholderText="Please Name Of Dinosaur Here",RemoveTextAfterFocusLost=false,Flag="Input1",Callback=function(v163) if (v163 and (v163~="")) then print("Text entered: ",v163);v35(v163);print("Added entered dinosaur to inventory:",v163);else print("Please enter a dinosaur name.");end end});local v36=v2:CreateButton({Name="Add Dinosaur to Inventory",Callback=function() local v164=v11.CurrentOption[1];if (v164 and (v164~="")) then v35(v164);print("Added entered dinosaur to inventory:",v164);else print("Please enter a dinosaur name.");end end});local v37=v1:CreateTab("AutoFarm|Good Things",4483362458);local v12=v37:CreateSection("Anti Ban");local v38=false;local v39={"Rekkusu, Destroyer of Worlds","Lucas Tha Kittygator","Violex Behemoth","Mad Al","Supersuchus","Alligaterror","Vexahias","?????","Zweinova-Exa","Apocalios","Crimson Soaked Terranotus","Igneous Teravore","Ultimallosaurus","Anastasia","Overmoth","Lucy","Droid","Voltacoatl","Kralkatorrik","Spooki"};local function v40() local v165=game.Players:GetPlayers();for v265,v266 in ipairs(v165) do if table.find(v39,v266.Name) then game.Players.LocalPlayer:Kick("Moderator joined the game.");end end end local function v41() v38=true;game.StarterGui:SetCore("ChatMakeSystemMessage",{Text="The Full Anti Ban Has Been Enabled, Looking For Admins If They Join",Color=Color3.new(1,0,0),Font=Enum.Font.SourceSansBold,TextSize=18});spawn(function() while v38 do v40();wait(1);end end);local v166=game.Workspace:FindFirstChild("GameEvents");if v166 then local v331=v166:FindFirstChild("AdminDino");if v331 then v331.OnServerEvent:Connect(function() game.Players.LocalPlayer:Kick("Admin detected in the game.");end);end end end game.Players.LocalPlayer.CharacterAdded:Connect(function(v167) if v38 then v41();end end);local v42=v37:CreateToggle({Name="Anti Ban",CurrentValue=false,Flag="AntiBanToggle",Callback=function(v168) if v168 then if  not v38 then v41();else game.StarterGui:SetCore("ChatMakeSystemMessage",{Text="The Anti Ban Is Already Activated",Color=Color3.new(1,0,0),Font=Enum.Font.SourceSansBold,TextSize=18});end else v38=false;game.StarterGui:SetCore("ChatMakeSystemMessage",{Text="The Anti Ban Has Been Disabled",Color=Color3.new(1,0,0),Font=Enum.Font.SourceSansBold,TextSize=18});end end});local v12=v37:CreateSection("Auto Farm");local v3=game.Players.LocalPlayer;local v43=v3.Character or v3.CharacterAdded:Wait() ;local v44=v43:WaitForChild("HumanoidRootPart");local v45=workspace.CurrentCamera;local v46=500000000;local v47=80;local v48=200;local v29=false;local function v49() for v267,v268 in pairs(v43:GetDescendants()) do if (v268:IsA("BasePart") or v268:IsA("MeshPart")) then v268.CanCollide=false;end end end local function v50() for v269,v270 in pairs(v43:GetDescendants()) do if (v270:IsA("BasePart") or v270:IsA("MeshPart")) then v270.CanCollide=true;end end end local function v51(v169) local v170=v169.Position + Vector3.new(0,5,0) ;local v171=Instance.new("BodyPosition");v171.Position=v170;v171.MaxForce=Vector3.new(v46,v46,v46);v171.D=v48;v171.P=v47;v171.Parent=v44;local v177=Instance.new("BodyGyro");v177.CFrame=v44.CFrame;v177.MaxTorque=Vector3.new(v46,v46,v46);v177.P=v47;v177.Parent=v44;v49();RunService:BindToRenderStep("FollowCharacter",Enum.RenderPriority.Camera.Value,function() v45.CFrame=CFrame.new(v45.CFrame.Position,v44.Position);end);v44.Anchored=true;wait(1);v44.Anchored=false;v44.Position=v170;wait(5);v50();RunService:UnbindFromRenderStep("FollowCharacter");end local function v30() local v185=game:GetService("Workspace"):FindFirstChild("GameMap"):FindFirstChild("Decorations"):FindFirstChild("Monster Madness Area");local v186=v185 and v185:FindFirstChild("Water") ;if v186 then local v332=v186;local v333=game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.p;local v334=game:GetService("Workspace").GameEvents.addThirst;v334:FireServer(v332,v333);else print("Water part not found in Monster Madness Area.");end end local function v31() while v29 do wait(6);local v272=game.Workspace:FindFirstChild("FernStorage");local v273=v272 and v272:FindFirstChild("Fern") ;if v273 then print("Fern found in FernStorage, firing EatPlant event and simulating drinking water.");for v398=1,10 do game.Workspace.GameEvents.EatPlant:FireServer(v273,10);end v30();else print("Fern not found in FernStorage.");end end end local function v32() if  not v29 then print("Starting hunger loop.");v29=true;spawn(v31);else print("Hunger loop already running.");end end local function v33() if v29 then print("Stopping hunger loop.");v29=false;else print("Hunger loop is not running.");end end local function v52() local v187=workspace:FindFirstChild("ServerValues");if v187 then local v335=v187:FindFirstChild("ServerBonus");if v335 then local v399=v335:FindFirstChild("CurrentRegionBonus");if v399 then local v420=game:GetService("ReplicatedStorage");local v421=v420:FindFirstChild("Regions");if v421 then local v435=v421:FindFirstChild(v399.Value);if v435 then local v439=v435:FindFirstChildWhichIsA("Part");if v439 then v3:SetAttribute("Region",v399.Value);v3:SetAttribute("RegionName",v399.Value);v439.Position=v3.Character.HumanoidRootPart.Position;end end end end end end end local function v53() while autoFarmRunning do local v274=workspace:FindFirstChild("ServerValues");if v274 then local v375=v274:FindFirstChild("ServerBonus");if v375 then local v418=v375:FindFirstChild("CurrentRegionBonus");if v418 then local v430=v3:GetAttribute("CurrentRegionBonus");if (v430~=v418.Value) then v3:SetAttribute("CurrentRegionBonus",v418.Value);v52();print("Region bonus updated and reapplied.");end end end end wait(10);end end local function v54(v188) local v189=Instance.new("Part");v189.Size=Vector3.new(100,1,100);v189.Position=Vector3.new( -825,7954,3603) + Vector3.new(0,0,v188.UserId%1000 ) ;v189.Anchored=true;v189.Name="DinoPlatform_"   .. v188.UserId ;v189.Parent=workspace;print("Created platform for player:",v188.Name,"at position:",v189.Position);return v189;end local function v55(v195,v196) local v197=v195:FindFirstChild("HumanoidRootPart") or v195:FindFirstChild("Torso") or v195:FindFirstChild("UpperTorso") ;if  not v197 then warn("Dinosaur does not have a valid root part");return;end local v198=v196.Position + Vector3.new(0,5,0) ;v197.Position=v198;v197.Anchored=true;end local v56=v37:CreateToggle({Name="Auto Farm|Argen (Elder)",CurrentValue=false,Flag="AutoFarmToggle",Callback=function(v201) if v201 then local v336=v54(v3);v51(v336);v32();autoFarmRunning=true;spawn(v53);print("Auto Farm enabled: Floating to platform and feeding started.");else v33();autoFarmRunning=false;print("Auto Farm disabled.");end end});local v12=v37:CreateSection("Auto Elder");local v3=game.Players.LocalPlayer;local v57=v3.UserId;local v43=v3.Character or v3.CharacterAdded:Wait() ;local v44=v43:WaitForChild("HumanoidRootPart");local v58=false;local v59=false;local v6,v7;local v47=80;local v46=50000000;local v60=false;local function v49() for v275,v276 in pairs(v43:GetDescendants()) do if v276:IsA("BasePart") then v276.CanCollide=false;end end end local function v50() for v277,v278 in pairs(v43:GetDescendants()) do if v278:IsA("BasePart") then v278.CanCollide=true;end end end local function v61() local v202=game:GetService("Workspace");local v203=Instance.new("Part");v203.Size=Vector3.new(200,1,200);v203.Anchored=true;v203.Position=Vector3.new(3818,3707,2632);v203.BrickColor=BrickColor.new("Bright red");v203.Parent=v202;end local function v51() local v209=Vector3.new(3818,3707,2632) + Vector3.new(0,5,0) ;local v210=Instance.new("BodyPosition");v210.Position=v209;v210.MaxForce=Vector3.new(v46,v46,v46);v210.D=500;v210.P=v47;v210.Parent=v44;local v216=Instance.new("BodyGyro");v216.CFrame=v44.CFrame;v216.MaxTorque=Vector3.new(v46,v46,v46);v216.P=v47;v216.Parent=v44;v49();v44.Anchored=true;wait(1);v44.Anchored=false;wait(5);v50();end local function v62() local v223=game:GetService("Workspace").GameMap.Water.Water;local v224=v3.Character.HumanoidRootPart.CFrame.p;local v225=game:GetService("Workspace").GameEvents.addThirst;local v226,v227=pcall(function() v225:FireServer(v223,v224);end);if  not v226 then warn("Failed to add thirst: "   .. tostring(v227) );end end local function v63() local v228=game.Workspace.GameMap.Ferns.Fern;local v229=game.Workspace.GameEvents.EatPlant;local v230,v231=pcall(function() v229:FireServer(v228,2);end);if  not v230 then warn("Failed to add food: "   .. tostring(v231) );end end local function v64() while v58 do local v279,v280=pcall(function() v62();v63();end);if  not v279 then warn("Error in startFoodAndWater: "   .. tostring(v280) );end wait(2);end end local function v65() while v60 do local v281=game:service("VirtualUser");v3.Idled:connect(function() v281:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame);wait(1);v281:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame);end);wait(10);end end local function v25(v232) v43=v232;v44=v43:WaitForChild("HumanoidRootPart");if v58 then v51();end end local function v66(v233) v58=v233;v60=v233;if v58 then v51();spawn(v64);spawn(v65);else v60=false;end end v3.CharacterAdded:Connect(v25);v43.ChildAdded:Connect(function(v234) if v234:IsA("Humanoid") then v234:GetPropertyChangedSignal("Health"):Connect(function() if (v58 and (v234.Health>0)) then v51();end end);end end);spawn(function() while true do if v58 then v51();end wait(5);end end);local v9=v37:CreateToggle({Name="Auto Elder",CurrentValue=false,Flag="AutoElderToggle",Callback=function(v235) v66(v235);end});local v67=v37:CreateDropdown({Name="Dinosaur Type",Options={"Default Dino","Heavy Herbivores|Heavy Carnivores"},CurrentOption="Default Dino",MultipleOptions=false,Flag="DinoTypeDropdown",Callback=function(v236) if (v236=="Default Dino") then v47=80;elseif (v236=="Heavy Herbivores|Heavy Carnivores") then v47=90;else print("Invalid option selected.");end end});local v12=v37:CreateSection("Bypass Region");local v3=game.Players.LocalPlayer;local v68=false;local v69=v3:GetAttribute("Region");local v70=v3:GetAttribute("RegionName");local function v52() local v237=workspace:FindFirstChild("ServerValues");if v237 then local v337=v237:FindFirstChild("ServerBonus");if v337 then local v400=v337:FindFirstChild("CurrentRegionBonus");if v400 then local v422=game:GetService("ReplicatedStorage");local v423=v422:FindFirstChild("Regions");if v423 then local v436=v423:FindFirstChild(v400.Value);if v436 then local v440=v436:FindFirstChildWhichIsA("Part");if v440 then v3:SetAttribute("Region",v400.Value);v3:SetAttribute("RegionName",v400.Value);v440.Position=v3.Character.HumanoidRootPart.Position;end end end end end end end local function v71() v3:SetAttribute("Region",v69);v3:SetAttribute("RegionName",v70);end local function v72() while v68 do if (v3:GetAttribute("Region")~="Wilderness") then v52();end wait(10);end end local function v73(v238) v68=v238;if v68 then spawn(v72);else v71();end end local v9=v37:CreateToggle({Name="Bypass Region",CurrentValue=false,Flag="BypassRegionToggle",Callback=function(v239) v73(v239);end});local function v74() while true do if v68 then v52();end wait(5);end end v3.CharacterAdded:Connect(function(v240) if v68 then v52();end end);v3.CharacterRemoving:Connect(function() if v68 then v52();end end);spawn(v74);local v12=v37:CreateSection("Glass Farm");local v3=game.Players.LocalPlayer;local v43=v3.Character or v3.CharacterAdded:Wait() ;local v44=v43:WaitForChild("HumanoidRootPart");local v46=50000000000000;local v47=700;local v75=nil;local v76=nil;local function v49() for v282,v283 in pairs(v43:GetDescendants()) do if v283:IsA("BasePart") then v283.CanCollide=false;end end end local function v50() for v284,v285 in pairs(v43:GetDescendants()) do if v285:IsA("BasePart") then v285.CanCollide=true;end end end local function v77(v241) if  not v75 then v75=Instance.new("BodyPosition");v75.MaxForce=Vector3.new(v46,v46,v46);v75.D=500;v75.P=v47;v75.Parent=v44;end if  not v76 then v76=Instance.new("BodyGyro");v76.MaxTorque=Vector3.new(v46,v46,v46);v76.P=v47;v76.Parent=v44;end local v242=v241.Position + Vector3.new(0,5,0) ;v75.Position=v242;v49();end local function v78() end local function v79() local v244=workspace:FindFirstChild("GameMap") and workspace.GameMap:FindFirstChild("Miscellaneous") ;if v244 then for v380,v381 in pairs(v244:GetChildren()) do if (v381.Name=="Beam") then return v381;end end end return nil;end local function v80() local v245=workspace:FindFirstChild("GameMap") and workspace.GameMap:FindFirstChild("Miscellaneous") ;if v245 then for v382,v383 in pairs(v245:GetChildren()) do if ((v383.Name=="Bubble") or (v383.Name=="Chest")) then return v383;end end end return nil;end local function v62() while true do if  not _G.LoopThirst then return;end pcall(function() if game:GetService("Workspace").GameMap:FindFirstChild("Water") then local v401=game:GetService("Workspace").GameMap:FindFirstChild("Water");if game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.p then local v424=game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.p;local v425=game:GetService("Workspace").GameEvents.addThirst;v425:FireServer(v401,v424);end end end);wait(4);end end local function v63() while true do if  not _G.LoopHunger then return;end pcall(function() local v345=game.Workspace.GameMap.Ferns.Fern;if v345 then local v402=game.Workspace.GameEvents.EatPlant;v402:FireServer(v345,2);end end);wait(4);end end local function v64() _G.LoopThirst=true;_G.LoopHunger=true;spawn(v62);spawn(v63);end local function v81() _G.LoopThirst=false;_G.LoopHunger=false;end local v82=false;local function v83() v82=true;v64();while v82 do local v286=v79();if  not v286 then v286=v80();end if v286 then v77(v286);wait(6);v78();end wait(1);end end local function v84() v82=false;v81();if v75 then v75:Destroy();v75=nil;end if v76 then v76:Destroy();v76=nil;end v50();end local function v25(v246) v43=v246;v44=v43:WaitForChild("HumanoidRootPart");if v82 then v83();end end v3.CharacterAdded:Connect(v25);v37:CreateToggle({Name="Glass Beam Auto Farm",CurrentValue=false,Flag="GlassBeamAutoFarmToggle",Callback=function(v247) if v247 then v83();else v84();end end});local v85=v1:CreateTab("ANTI AFK|DS TELEPORTER",4483362458);local v12=v85:CreateSection("Teleport to Maps");local v86={["Homelands Map"]=16211666354,["Default Map 2018-2019"]=15918631033,["Gallus Island"]=794299040};local function v87(v248) game:GetService("TeleportService"):Teleport(v248,game.Players.LocalPlayer);end for v249,v250 in pairs(v86) do v85:CreateButton({Name=v249,Callback=function() v87(v250);end});end local v12=v85:CreateSection("Anti AFK");local v3=game.Players.LocalPlayer;local v60=false;local function v65() while true do local v287=game:service("VirtualUser");v3.Idled:connect(function() v287:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame);wait(1);v287:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame);end);wait(10);end end local function v88() if  not v60 then v60=true;spawn(v65);end end local v36=v85:CreateButton({Name="Enable Anti-AFK",Callback=function() v88();end});local v89=v1:CreateTab("Christmas Event",4483362458);local v3=game.Players.LocalPlayer;local v43=v3.Character or v3.CharacterAdded:Wait() ;local v44=v43:WaitForChild("HumanoidRootPart");local v46=50000000000000;local v47=700;local v75=nil;local v76=nil;local v29=false;local function v49() for v288,v289 in pairs(v43:GetDescendants()) do if v289:IsA("BasePart") then v289.CanCollide=false;end end end local function v50() for v290,v291 in pairs(v43:GetDescendants()) do if v291:IsA("BasePart") then v291.CanCollide=true;end end end local function v77(v251) if  not v75 then v75=Instance.new("BodyPosition");v75.MaxForce=Vector3.new(v46,v46,v46);v75.D=500;v75.P=v47;v75.Parent=v44;end if  not v76 then v76=Instance.new("BodyGyro");v76.MaxTorque=Vector3.new(v46,v46,v46);v76.P=v47;v76.Parent=v44;end local v252=v251.Position + Vector3.new(0,5,0) ;v75.Position=v252;v49();end local function v90(v254) local v255=game:GetService("VirtualUser");v255:CaptureController();v255:SetKeyDown("f");wait(v254);v255:SetKeyUp("f");end local function v91() local v256=workspace:FindFirstChild("MiscellaneousStorage") and workspace.MiscellaneousStorage:FindFirstChild("CoalStorage") ;if v256 then for v386,v387 in pairs(v256:GetChildren()) do if (v387.Name=="Coal") then return v387;end end end return nil;end local function v30() local v257=game:GetService("Workspace"):FindFirstChild("GameMap"):FindFirstChild("Decorations"):FindFirstChild("Monster Madness Area");local v258=v257 and v257:FindFirstChild("Water") ;if v258 then local v353=v258;local v354=game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.p;local v355=game:GetService("Workspace").GameEvents.addThirst;v355:FireServer(v353,v354);else print("Water part not found in Monster Madness Area.");end end local function v31() while v29 do wait(5);local v292=game.Workspace:FindFirstChild("FernStorage");local v293=v292 and v292:FindFirstChild("Fern") ;if v293 then print("Fern found in FernStorage, firing EatPlant event and simulating drinking water.");game.Workspace.GameEvents.EatPlant:FireServer(v293,10);v30();else print("Fern not found in FernStorage.");end end end local function v32() if  not v29 then print("Starting hunger loop.");v29=true;spawn(v31);else print("Hunger loop already running.");end end local function v33() if v29 then print("Stopping hunger loop.");v29=false;else print("Hunger loop is not running.");end end local function v62() while true do if  not _G.LoopThirst then return;end pcall(function() if game:GetService("Workspace").GameMap:FindFirstChild("Water") then local v403=game:GetService("Workspace").GameMap:FindFirstChild("Water");if game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.p then local v426=game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.p;local v427=game:GetService("Workspace").GameEvents.addThirst;v427:FireServer(v403,v426);end end end);wait(4);end end local function v63() while true do if  not _G.LoopHunger then return;end pcall(function() local v356=game.Workspace.GameMap.Ferns.Fern;if v356 then local v404=game.Workspace.GameEvents.EatPlant;v404:FireServer(v356,2);end end);wait(4);end end local function v64() _G.LoopThirst=true;_G.LoopHunger=true;spawn(v62);spawn(v63);end local function v81() _G.LoopThirst=false;_G.LoopHunger=false;end local v82=false;local function v83() v82=true;v64();v32();while v82 do local v294=v91();if v294 then v77(v294);wait(2);v90(3);end wait(1);end end local function v84() v82=false;v81();v33();if v75 then v75:Destroy();v75=nil;end if v76 then v76:Destroy();v76=nil;end v50();end local function v25(v259) v43=v259;v44=v43:WaitForChild("HumanoidRootPart");if v82 then v83();end end v3.CharacterAdded:Connect(v25);v89:CreateToggle({Name="Coal Auto Farm",CurrentValue=false,Flag="CoalAutoFarmToggle",Callback=function(v260) if v260 then v83();else v84();end end});local v12=v85:CreateSection("Christmas Event");local v92=false;local function v93() while v92 do for v357,v358 in pairs(workspace.MiscellaneousStorage.CoalStorage:GetChildren()) do if  not v358:FindFirstChild("ESPBox") then local v405=Instance.new("BoxHandleAdornment");v405.Name="ESPBox";v405.Parent=v358;v405.Adornee=v358;v405.Size=v358.Size * 5 ;v405.ZIndex=10;v405.AlwaysOnTop=true;v405.Color3=Color3.new(1,0,0);v405.Transparency=0.5;end end wait(1);end end local function v94() for v295,v296 in pairs(workspace.MiscellaneousStorage.CoalStorage:GetChildren()) do local v297=v296:FindFirstChild("ESPBox");if v297 then v297:Destroy();end end end local v9=v89:CreateToggle({Name="Enable Coal ESP",CurrentValue=false,Flag="CoalESPToggle",Callback=function(v261) v92=v261;if v92 then spawn(v93);print("Coal ESP enabled.");else v94();print("Coal ESP disabled.");end end});local v12=v89:CreateSection("Lightbulb Farm");local function v95() for v298,v299 in pairs(workspace.MiscellaneousStorage.ChristmasLightStorage:GetChildren()) do if  not v299:FindFirstChild("ESPBox") then local v388=Instance.new("BoxHandleAdornment");v388.Name="ESPBox";v388.Parent=v299;v388.Adornee=v299;v388.Size=Vector3.new(5,5,5);v388.ZIndex=10;v388.AlwaysOnTop=true;v388.Color3=Color3.new(0,1,0);v388.Transparency=0.5;end end end local function v96() for v300,v301 in pairs(workspace.MiscellaneousStorage.ChristmasLightStorage:GetChildren()) do local v302=v301:FindFirstChild("ESPBox");if v302 then v302:Destroy();end end end local function v97() while true do v95();wait(5);end end local v9=v89:CreateToggle({Name="Enable Christmas Lightbulb ESP",CurrentValue=false,Flag="ChristmasLightbulbESPToggle",Callback=function(v262) if v262 then spawn(v97);print("Christmas Lightbulb ESP enabled.");else v96();print("Christmas Lightbulb ESP disabled.");end end});
+ Rayfield:Notify({
+    Title = "if Ui Restarts its Normal!",
+    Content = "Bypassed Boi",
+    Duration = 6.5,
+    Image = 4483362458,
+ })
+
+ local PlayerTab = Window:CreateTab("Player|Functions", 4483362458) -- Title, Image
+
+ local player = game.Players.LocalPlayer
+ local vehicleFlySpeed = 0.9 -- Default fly speed
+ local flying = false
+ local vehicleGyro = nil
+ local vehicleVelocity = nil
+ 
+ -- Function to enable or disable flying
+ local function setFly(enabled)
+     if enabled then
+         flying = true
+         local character = player.Character or player.CharacterAdded:Wait()
+         local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+         
+         -- Create BodyGyro and BodyVelocity
+         vehicleGyro = Instance.new("BodyGyro")
+         vehicleGyro.P = 9e4
+         vehicleGyro.Parent = humanoidRootPart
+ 
+         vehicleVelocity = Instance.new("BodyVelocity")
+         vehicleVelocity.Velocity = Vector3.new(0, 0, 0)
+         vehicleVelocity.MaxForce = Vector3.new(9e9, 9e9, 9e9)
+         vehicleVelocity.Parent = humanoidRootPart
+ 
+         -- Determine if the player is on a mobile device
+         local isMobile = game.UserInputService.TouchEnabled and not game.UserInputService.KeyboardEnabled
+         
+         -- Flying loop
+         local flyLoop
+         flyLoop = game:GetService("RunService").Stepped:Connect(function()
+             if not flying then flyLoop:Disconnect() return end
+             -- Stay still by default
+             vehicleVelocity.Velocity = Vector3.new(0, 0, 0)
+             if isMobile then
+                 -- Mobile controls for flying
+                 local moveDirection = game.UserInputService:GetDeviceRotation()
+                 vehicleVelocity.Velocity = moveDirection.LookVector * vehicleFlySpeed
+             else
+                 -- Keyboard controls for flying
+                 if game.UserInputService:IsKeyDown(Enum.KeyCode.W) then
+                     vehicleVelocity.Velocity = workspace.CurrentCamera.CFrame.LookVector * vehicleFlySpeed
+                 elseif game.UserInputService:IsKeyDown(Enum.KeyCode.S) then
+                     vehicleVelocity.Velocity = -workspace.CurrentCamera.CFrame.LookVector * vehicleFlySpeed
+                 elseif game.UserInputService:IsKeyDown(Enum.KeyCode.A) then
+                     vehicleVelocity.Velocity = -workspace.CurrentCamera.CFrame.RightVector * vehicleFlySpeed
+                 elseif game.UserInputService:IsKeyDown(Enum.KeyCode.D) then
+                     vehicleVelocity.Velocity = workspace.CurrentCamera.CFrame.RightVector * vehicleFlySpeed
+                 elseif game.UserInputService:IsKeyDown(Enum.KeyCode.Space) then
+                     vehicleVelocity.Velocity = Vector3.new(0, vehicleFlySpeed, 0)
+                 elseif game.UserInputService:IsKeyDown(Enum.KeyCode.LeftShift) then
+                     vehicleVelocity.Velocity = Vector3.new(0, -vehicleFlySpeed, 0)
+                 end
+             end
+             vehicleGyro.CFrame = workspace.CurrentCamera.CFrame
+         end)
+     else
+         flying = false
+         if vehicleGyro then
+             vehicleGyro:Destroy()
+             vehicleGyro = nil
+         end
+         if vehicleVelocity then
+             vehicleVelocity:Destroy()
+             vehicleVelocity = nil
+         end
+     end
+ end
+ 
+ local Toggle = PlayerTab:CreateToggle({
+    Name = "Fly",
+    CurrentValue = false,
+    Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Value)
+       setFly(Value)
+    end,
+ })
+ 
+ -- Function to update fly speed
+ local function updateFlySpeed(newSpeed)
+     vehicleFlySpeed = newSpeed
+ end
+ 
+ local Input = PlayerTab:CreateInput({
+    Name = "Fly Speed",
+    CurrentValue = "",
+    PlaceholderText = "Fly Speed?",
+    RemoveTextAfterFocusLost = false,
+    Flag = "Input1",
+    Callback = function(Text)
+        local speed = tonumber(Text)
+        if speed then
+            updateFlySpeed(speed)
+        end
+    end,
+ })
+ 
+ local Section = PlayerTab:CreateSection("ESP")
+ 
+ getgenv().enabled = true
+ getgenv().filluseteamcolor = true
+ getgenv().outlineuseteamcolor = true
+ getgenv().fillcolor = Color3.new(0, 0, 0)
+ getgenv().outlinecolor = Color3.new(1, 1, 1)
+ getgenv().filltrans = 1
+ getgenv().outlinetrans = 0
+ 
+ local loadESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/zntly/highlight-esp/main/esp.lua"))
+ 
+ local espEnabled = false
+ 
+ -- Function to update ESP settings
+ local function updateESPSettings(filltrans, fillcolor, outlinecolor, outlineuseteamcolor, filluseteamcolor)
+     getgenv().filltrans = filltrans or getgenv().filltrans
+     getgenv().fillcolor = fillcolor or getgenv().fillcolor
+     getgenv().outlinecolor = outlinecolor or getgenv().outlinecolor
+     getgenv().outlineuseteamcolor = outlineuseteamcolor or getgenv().outlineuseteamcolor
+     getgenv().filluseteamcolor = filluseteamcolor or getgenv().filluseteamcolor
+ end
+ 
+ -- Function to create ESP highlights and labels for characters
+ local function createESP(character)
+     if not character:FindFirstChildOfClass("Humanoid") then return end
+     local humanoidRootPart = character:FindFirstChild("HumanoidRootPart") or character:FindFirstChild("Torso") or character:FindFirstChild("UpperTorso")
+     
+     if humanoidRootPart then
+         -- Run external ESP script
+         loadESP()
+     end
+ end
+ 
+ -- Function to remove ESP highlights and labels for characters
+ local function removeESP(character)
+     if character:FindFirstChild("Highlight") then
+         character.Highlight:Destroy()
+     end
+     if character:FindFirstChild("BillboardGui") then
+         character.BillboardGui:Destroy()
+     end
+ end
+ 
+ -- Function to handle character added
+ local function onCharacterAdded(character)
+     if espEnabled then
+         createESP(character)
+     end
+ end
+ 
+ -- Function to handle player added
+ local function onPlayerAdded(player)
+     player.CharacterAdded:Connect(onCharacterAdded)
+     if player.Character then
+         onCharacterAdded(player.Character)
+     end
+ end
+ 
+ -- Function to handle player removing
+ local function onPlayerRemoving(player)
+     if player.Character then
+         removeESP(player.Character)
+     end
+ end
+ 
+ -- Connect existing and future players
+ for _, player in pairs(game.Players:GetPlayers()) do
+     onPlayerAdded(player)
+ end
+ game.Players.PlayerAdded:Connect(onPlayerAdded)
+ game.Players.PlayerRemoving:Connect(onPlayerRemoving)
+ 
+ -- Function to toggle ESP on/off
+ local function toggleESP(state)
+     espEnabled = state
+     getgenv().enabled = state
+     if espEnabled then
+         for _, player in pairs(game.Players:GetPlayers()) do
+             if player.Character then
+                 createESP(player.Character)
+             end
+         end
+     else
+         for _, player in pairs(game.Players:GetPlayers()) do
+             if player.Character then
+                 removeESP(player.Character)
+             end
+         end
+     end
+ end
+ 
+ -- Toggle to enable or disable ESP
+ local Toggle = PlayerTab:CreateToggle({
+     Name = "Dinosaur ESP",
+     CurrentValue = false,
+     Flag = "Toggle1", -- Unique flag for the toggle
+     Callback = function(Value)
+         toggleESP(Value)
+     end,
+ })
+ 
+ -- Add customization sliders/buttons
+ PlayerTab:CreateSlider({
+     Name = "Fill Transparency",
+     Range = {0, 1},
+     Increment = 0.1,
+     Suffix = "Transparency",
+     CurrentValue = 1,
+     Flag = "FillTransparency",
+     Callback = function(Value)
+         updateESPSettings(Value)
+     end,
+ })
+ 
+ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+ 
+ local Window = Rayfield:CreateWindow({
+     Name = "ExePloits",
+     Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+     LoadingTitle = "I AM|Exe LOL",
+     LoadingSubtitle = "by Sonic|Exetior",
+     Theme = { -- Custom Theme Configuration for Dark Blue
+         TextColor = Color3.fromRGB(240, 240, 240),
+         Background = Color3.fromRGB(0, 38, 70), -- Dark Blue Background
+         Topbar = Color3.fromRGB(0, 48, 82),
+         Shadow = Color3.fromRGB(0, 28, 52),
+         NotificationBackground = Color3.fromRGB(0, 28, 52),
+         NotificationActionsBackground = Color3.fromRGB(0, 68, 112),
+         TabBackground = Color3.fromRGB(0, 68, 112),
+         TabStroke = Color3.fromRGB(0, 78, 132),
+         TabBackgroundSelected = Color3.fromRGB(0, 88, 152),
+         TabTextColor = Color3.fromRGB(240, 240, 240),
+         SelectedTabTextColor = Color3.fromRGB(50, 50, 50),
+         ElementBackground = Color3.fromRGB(0, 38, 70),
+         ElementBackgroundHover = Color3.fromRGB(0, 48, 82),
+         SecondaryElementBackground = Color3.fromRGB(0, 28, 52),
+         ElementStroke = Color3.fromRGB(0, 58, 102),
+         SecondaryElementStroke = Color3.fromRGB(0, 68, 112),
+         SliderBackground = Color3.fromRGB(0, 108, 192),
+         SliderProgress = Color3.fromRGB(0, 128, 232),
+         SliderStroke = Color3.fromRGB(0, 148, 272),
+         ToggleBackground = Color3.fromRGB(0, 38, 70),
+         ToggleEnabled = Color3.fromRGB(0, 138, 214),
+         ToggleDisabled = Color3.fromRGB(100, 100, 100),
+         ToggleEnabledStroke = Color3.fromRGB(0, 168, 255),
+         ToggleDisabledStroke = Color3.fromRGB(125, 125, 125),
+         ToggleEnabledOuterStroke = Color3.fromRGB(100, 100, 100),
+         ToggleDisabledOuterStroke = Color3.fromRGB(65, 65, 65),
+         DropdownSelected = Color3.fromRGB(0, 48, 82),
+         DropdownUnselected = Color3.fromRGB(0, 28, 52),
+         InputBackground = Color3.fromRGB(0, 28, 52),
+         InputStroke = Color3.fromRGB(0, 68, 112),
+         PlaceholderColor = Color3.fromRGB(178, 178, 178)
+     },
+  
+     DisableRayfieldPrompts = false,
+     DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
+  
+     ConfigurationSaving = {
+        Enabled = true,
+        FolderName = nil, -- Create a custom folder for your hub/game
+        FileName = "Big Hub"
+     },
+  
+     Discord = {
+        Enabled = false, -- Prompt the user to join your Discord server if their executor supports it
+        Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+        RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+     },
+  
+     KeySystem = false, -- Set this to true to use our key system
+     KeySettings = {
+        Title = "Untitled",
+        Subtitle = "Key System",
+        Note = "No method of obtaining the key is provided", -- Use this to tell the user how to get a key
+        FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+        SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+        GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+        Key = {"Hello"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+     }
+  })
+ 
+  Rayfield:Notify({
+     Title = "Bypassing....",
+     Content = "Bypassed Boi",
+     Duration = 6.5,
+     Image = 4483362458,
+  })
+ 
+ local PlayerTab = Window:CreateTab("Player|Functions", 4483362458) -- Title, Image
+ 
+ local player = game.Players.LocalPlayer
+ local vehicleFlySpeed = 0.9 -- Default fly speed
+ local flying = false
+ local vehicleGyro = nil
+ local vehicleVelocity = nil
+ 
+ -- Function to enable or disable flying
+ local function setFly(enabled)
+     if enabled then
+         flying = true
+         local character = player.Character or player.CharacterAdded:Wait()
+         local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+         
+         -- Create BodyGyro and BodyVelocity
+         vehicleGyro = Instance.new("BodyGyro")
+         vehicleGyro.P = 9e4
+         vehicleGyro.Parent = humanoidRootPart
+ 
+         vehicleVelocity = Instance.new("BodyVelocity")
+         vehicleVelocity.Velocity = Vector3.new(0, 0, 0)
+         vehicleVelocity.MaxForce = Vector3.new(9e9, 9e9, 9e9)
+         vehicleVelocity.Parent = humanoidRootPart
+ 
+         -- Determine if the player is on a mobile device
+         local isMobile = game.UserInputService.TouchEnabled and not game.UserInputService.KeyboardEnabled
+         
+         -- Flying loop
+         local flyLoop
+         flyLoop = game:GetService("RunService").Stepped:Connect(function()
+             if not flying then flyLoop:Disconnect() return end
+             -- Stay still by default
+             vehicleVelocity.Velocity = Vector3.new(0, 0, 0)
+             if isMobile then
+                 -- Mobile controls for flying
+                 local moveDirection = game.UserInputService:GetDeviceRotation()
+                 vehicleVelocity.Velocity = moveDirection.LookVector * vehicleFlySpeed
+             else
+                 -- Keyboard controls for flying
+                 if game.UserInputService:IsKeyDown(Enum.KeyCode.W) then
+                     vehicleVelocity.Velocity = workspace.CurrentCamera.CFrame.LookVector * vehicleFlySpeed
+                 elseif game.UserInputService:IsKeyDown(Enum.KeyCode.S) then
+                     vehicleVelocity.Velocity = -workspace.CurrentCamera.CFrame.LookVector * vehicleFlySpeed
+                 elseif game.UserInputService:IsKeyDown(Enum.KeyCode.A) then
+                     vehicleVelocity.Velocity = -workspace.CurrentCamera.CFrame.RightVector * vehicleFlySpeed
+                 elseif game.UserInputService:IsKeyDown(Enum.KeyCode.D) then
+                     vehicleVelocity.Velocity = workspace.CurrentCamera.CFrame.RightVector * vehicleFlySpeed
+                 elseif game.UserInputService:IsKeyDown(Enum.KeyCode.Space) then
+                     vehicleVelocity.Velocity = Vector3.new(0, vehicleFlySpeed, 0)
+                 elseif game.UserInputService:IsKeyDown(Enum.KeyCode.LeftShift) then
+                     vehicleVelocity.Velocity = Vector3.new(0, -vehicleFlySpeed, 0)
+                 end
+             end
+             vehicleGyro.CFrame = workspace.CurrentCamera.CFrame
+         end)
+     else
+         flying = false
+         if vehicleGyro then
+             vehicleGyro:Destroy()
+             vehicleGyro = nil
+         end
+         if vehicleVelocity then
+             vehicleVelocity:Destroy()
+             vehicleVelocity = nil
+         end
+     end
+ end
+ 
+ local Toggle = PlayerTab:CreateToggle({
+    Name = "Fly",
+    CurrentValue = false,
+    Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Value)
+       setFly(Value)
+    end,
+ })
+ 
+ -- Function to update fly speed
+ local function updateFlySpeed(newSpeed)
+     vehicleFlySpeed = newSpeed
+ end
+ 
+ local Input = PlayerTab:CreateInput({
+    Name = "Fly Speed",
+    CurrentValue = "",
+    PlaceholderText = "Fly Speed?",
+    RemoveTextAfterFocusLost = false,
+    Flag = "Input1",
+    Callback = function(Text)
+        local speed = tonumber(Text)
+        if speed then
+            updateFlySpeed(speed)
+        end
+    end,
+ })
+ 
+ local giveHungerEnabled = false
+
+ -- Function to simulate the thirst action using the correct water part
+ local function simulateThirstAction()
+     local monsterMadnessArea = game:GetService("Workspace"):FindFirstChild("GameMap"):FindFirstChild("Decorations"):FindFirstChild("Monster Madness Area")
+     local water = monsterMadnessArea and monsterMadnessArea:FindFirstChild("Water")
+ 
+     if water then
+         local A_1 = water -- Reference the water part directly
+         local A_2 = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.p
+         local Event = game:GetService("Workspace").GameEvents.addThirst
+         Event:FireServer(A_1, A_2)
+     else
+         print("Water part not found in Monster Madness Area.")
+     end
+ end
+ 
+ -- Function to manage hunger and thirst loop
+ local function HungerLoop()
+     while giveHungerEnabled do
+         wait(0.1)
+         -- Check if FernStorage exists before accessing Fern
+         local fernStorage = game.Workspace:FindFirstChild("FernStorage")
+         local fern = fernStorage and fernStorage:FindFirstChild("Fern")
+ 
+         if fern then
+             print("Fern found in FernStorage, firing EatPlant event and simulating drinking water.")
+             game.Workspace.GameEvents.EatPlant:FireServer(fern, 10) -- Increase hunger
+             simulateThirstAction() -- Simulate drinking action
+         else
+             print("Fern not found in FernStorage.")
+         end
+     end
+ end
+ 
+ local function startHungerLoop()
+     if not giveHungerEnabled then
+         print("Starting hunger loop.")
+         giveHungerEnabled = true
+         spawn(HungerLoop)
+     else
+         print("Hunger loop already running.")
+     end
+ end
+ 
+ local function stopHungerLoop()
+     if giveHungerEnabled then
+         print("Stopping hunger loop.")
+         giveHungerEnabled = false
+     else
+         print("Hunger loop is not running.")
+     end
+ end
+ 
+ -- Callback function for your existing UI toggle
+ local function onToggleHungerThirst(Value)
+     if Value then
+         startHungerLoop()
+     else
+         stopHungerLoop()
+     end
+ end
+ 
+ -- Toggle to enable or disable managing hunger and thirst
+ local Toggle = PlayerTab:CreateToggle({
+     Name = "Manage Hunger and Thirst",
+     CurrentValue = false,
+     Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+     Callback = function(Value)
+         onToggleHungerThirst(Value)
+     end,
+ }) 
+ 
+ local Section = PlayerTab:CreateSection("ESP")
+ 
+ getgenv().enabled = true
+ getgenv().filluseteamcolor = true
+ getgenv().outlineuseteamcolor = true
+ getgenv().fillcolor = Color3.new(0, 0, 0)
+ getgenv().outlinecolor = Color3.new(1, 1, 1)
+ getgenv().filltrans = 1
+ getgenv().outlinetrans = 0
+ 
+ local loadESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/zntly/highlight-esp/main/esp.lua"))
+ 
+ local espEnabled = false
+ 
+ -- Function to update ESP settings
+ local function updateESPSettings(filltrans, fillcolor, outlinecolor, outlineuseteamcolor, filluseteamcolor)
+     getgenv().filltrans = filltrans or getgenv().filltrans
+     getgenv().fillcolor = fillcolor or getgenv().fillcolor
+     getgenv().outlinecolor = outlinecolor or getgenv().outlinecolor
+     getgenv().outlineuseteamcolor = outlineuseteamcolor or getgenv().outlineuseteamcolor
+     getgenv().filluseteamcolor = filluseteamcolor or getgenv().filluseteamcolor
+ end
+ 
+ -- Function to create ESP highlights and labels for characters
+ local function createESP(character)
+     if not character:FindFirstChildOfClass("Humanoid") then return end
+     local humanoidRootPart = character:FindFirstChild("HumanoidRootPart") or character:FindFirstChild("Torso") or character:FindFirstChild("UpperTorso")
+     
+     if humanoidRootPart then
+         -- Run external ESP script
+         loadESP()
+     end
+ end
+ 
+ -- Function to remove ESP highlights and labels for characters
+ local function removeESP(character)
+     if character:FindFirstChild("Highlight") then
+         character.Highlight:Destroy()
+     end
+     if character:FindFirstChild("BillboardGui") then
+         character.BillboardGui:Destroy()
+     end
+ end
+ 
+ -- Function to handle character added
+ local function onCharacterAdded(character)
+     if espEnabled then
+         createESP(character)
+     end
+ end
+ 
+ -- Function to handle player added
+ local function onPlayerAdded(player)
+     player.CharacterAdded:Connect(onCharacterAdded)
+     if player.Character then
+         onCharacterAdded(player.Character)
+     end
+ end
+ 
+ -- Function to handle player removing
+ local function onPlayerRemoving(player)
+     if player.Character then
+         removeESP(player.Character)
+     end
+ end
+ 
+ -- Connect existing and future players
+ for _, player in pairs(game.Players:GetPlayers()) do
+     onPlayerAdded(player)
+ end
+ game.Players.PlayerAdded:Connect(onPlayerAdded)
+ game.Players.PlayerRemoving:Connect(onPlayerRemoving)
+ 
+ -- Function to toggle ESP on/off
+ local function toggleESP(state)
+     espEnabled = state
+     getgenv().enabled = state
+     if espEnabled then
+         for _, player in pairs(game.Players:GetPlayers()) do
+             if player.Character then
+                 createESP(player.Character)
+             end
+         end
+     else
+         for _, player in pairs(game.Players:GetPlayers()) do
+             if player.Character then
+                 removeESP(player.Character)
+             end
+         end
+     end
+ end
+ 
+ -- Toggle to enable or disable ESP
+ local Toggle = PlayerTab:CreateToggle({
+     Name = "Dinosaur ESP",
+     CurrentValue = false,
+     Flag = "Toggle1", -- Unique flag for the toggle
+     Callback = function(Value)
+         toggleESP(Value)
+     end,
+ })
+ 
+ -- Add customization sliders/buttons
+ PlayerTab:CreateSlider({
+     Name = "Fill Transparency",
+     Range = {0, 1},
+     Increment = 0.1,
+     Suffix = "Transparency",
+     CurrentValue = 1,
+     Flag = "FillTransparency",
+     Callback = function(Value)
+         updateESPSettings(Value)
+     end,
+ })
+ 
+ local Section = PlayerTab:CreateSection("Put Skins|Dinos in Inventory")
+ 
+ local function simulateOwnershipAndMoveDinoFolder(dinoName)
+     local player = game.Players.LocalPlayer
+     local memoryCard = player:FindFirstChild("MemoryCard")
+     if not memoryCard then
+         memoryCard = Instance.new("Folder")
+         memoryCard.Name = "MemoryCard"
+         memoryCard.Parent = player
+         print("Created new MemoryCard folder")
+     end
+ 
+     local tokens = memoryCard:FindFirstChild("Tokens")
+     if not tokens then
+         tokens = Instance.new("Folder")
+         tokens.Name = "Tokens"
+         tokens.Parent = memoryCard
+         print("Created new Tokens folder")
+     end
+ 
+     local dinoToken = tokens:FindFirstChild(dinoName)
+     if not dinoToken then
+         dinoToken = Instance.new("IntValue")
+         dinoToken.Name = dinoName
+         dinoToken.Parent = tokens
+         print("Simulated token ownership of dinosaur:", dinoName)
+     else
+         print("Dinosaur token already exists for:", dinoName)
+     end
+ 
+     -- Move dinosaur folder from ReplicatedStorage to MemoryCard->Dinosaurs
+     local replicatedStorage = game:GetService("ReplicatedStorage")
+     local databaseFolder = replicatedStorage:FindFirstChild("Database")
+     if databaseFolder then
+         local dinosaursFolder = databaseFolder:FindFirstChild("Dinosaurs")
+         if dinosaursFolder then
+             local dinoFolder = dinosaursFolder:FindFirstChild(dinoName)
+             if dinoFolder then
+                 local memoryCardDinosaursFolder = memoryCard:FindFirstChild("Dinosaurs")
+                 if not memoryCardDinosaursFolder then
+                     memoryCardDinosaursFolder = Instance.new("Folder")
+                     memoryCardDinosaursFolder.Name = "Dinosaurs"
+                     memoryCardDinosaursFolder.Parent = memoryCard
+                     print("Created new Dinosaurs folder in MemoryCard")
+                 end
+ 
+                 if not memoryCardDinosaursFolder:FindFirstChild(dinoName) then
+                     local clonedDinoFolder = dinoFolder:Clone()
+                     clonedDinoFolder.Parent = memoryCardDinosaursFolder
+                     print("Moved dinosaur folder to MemoryCard->Dinosaurs:", dinoName)
+                 else
+                     print("Dinosaur folder already exists in MemoryCard->Dinosaurs:", dinoName)
+                 end
+             else
+                 warn("Dinosaur folder not found in ReplicatedStorage:", dinoName)
+             end
+         else
+             warn("Dinosaurs folder not found in Database")
+         end
+     else
+         warn("Database folder not found in ReplicatedStorage")
+     end
+ end
+ 
+ local Input = PlayerTab:CreateInput({
+    Name = "Enter Dinosaur Name",
+    CurrentValue = "",
+    PlaceholderText = "Please Name Of Dinosaur Here",
+    RemoveTextAfterFocusLost = false,
+    Flag = "Input1",
+    Callback = function(Text)
+        if Text and Text ~= "" then
+            print("Text entered: ", Text)
+            simulateOwnershipAndMoveDinoFolder(Text)
+            print("Added entered dinosaur to inventory:", Text)
+        else
+            print("Please enter a dinosaur name.")
+        end
+    end,
+ })
+ 
+ local Button = PlayerTab:CreateButton({
+    Name = "Add Dinosaur to Inventory",
+    Callback = function()
+        local enteredDino = Input.CurrentOption[1]  -- Adjusted to Input.CurrentValue
+        if enteredDino and enteredDino ~= "" then
+            simulateOwnershipAndMoveDinoFolder(enteredDino)
+            print("Added entered dinosaur to inventory:", enteredDino)
+        else
+            print("Please enter a dinosaur name.")
+        end
+    end,
+ })
+ 
+ local AutoFarmTab = Window:CreateTab("AutoFarm|Good Things", 4483362458) -- Title, Image
+ 
+ local Section = AutoFarmTab:CreateSection("Anti Ban")
+ 
+ local enabled = false
+ local moderators = {"Rekkusu, Destroyer of Worlds", "Lucas Tha Kittygator", "Violex Behemoth", "Mad Al", "Supersuchus", "Alligaterror", "Vexahias", "?????", "Zweinova-Exa", "Apocalios", "Crimson Soaked Terranotus", "Igneous Teravore", "Ultimallosaurus", "Anastasia", "Overmoth", "Lucy", "Droid", "Voltacoatl", "Kralkatorrik", "Spooki"} -- Updated list of moderator usernames
+ 
+ -- Function to check for moderators
+ local function checkForModerators()
+     local players = game.Players:GetPlayers()
+     for _, player in ipairs(players) do
+         if table.find(moderators, player.Name) then
+             game.Players.LocalPlayer:Kick("Moderator joined the game.")
+         end
+     end
+ end
+ 
+ -- Function to enable the anti-ban
+ local function enableAntiBan()
+     enabled = true
+     game.StarterGui:SetCore("ChatMakeSystemMessage", {Text = "The Full Anti Ban Has Been Enabled, Looking For Admins If They Join"; Color = Color3.new(1, 0, 0); Font = Enum.Font.SourceSansBold; TextSize = 18})
+     
+     -- Continuously check for moderators every second
+     spawn(function()
+         while enabled do
+             checkForModerators()
+             wait(1)
+         end
+     end)
+ 
+     -- Listen for AdminDino event
+     local gameEvents = game.Workspace:FindFirstChild("GameEvents")
+     if gameEvents then
+         local adminDinoEvent = gameEvents:FindFirstChild("AdminDino")
+         if adminDinoEvent then
+             adminDinoEvent.OnServerEvent:Connect(function()
+                 game.Players.LocalPlayer:Kick("Admin detected in the game.")
+             end)
+         end
+     end
+ end
+ 
+ -- Ensure anti-ban remains enabled even if the player respawns or engages in PvP
+ game.Players.LocalPlayer.CharacterAdded:Connect(function(character)
+     if enabled then
+         enableAntiBan()
+     end
+ end)
+ 
+ -- Toggle to activate anti-ban
+ local ToggleAntiBan = AutoFarmTab:CreateToggle({
+     Name = "Anti Ban",
+     CurrentValue = false,
+     Flag = "AntiBanToggle",
+     Callback = function(Value)
+         if Value then
+             if not enabled then
+                 enableAntiBan()
+             else
+                 game.StarterGui:SetCore("ChatMakeSystemMessage", {Text = "The Anti Ban Is Already Activated"; Color = Color3.new(1, 0, 0); Font = Enum.Font.SourceSansBold; TextSize = 18})
+             end
+         else
+             enabled = false
+             game.StarterGui:SetCore("ChatMakeSystemMessage", {Text = "The Anti Ban Has Been Disabled"; Color = Color3.new(1, 0, 0); Font = Enum.Font.SourceSansBold; TextSize = 18})
+         end
+     end,
+ })
+ 
+ local Section = AutoFarmTab:CreateSection("Auto Farm")
+ 
+ local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+local camera = workspace.CurrentCamera
+
+-- Default float parameters
+local floatForce = 500000000
+local vehicleFloatSpeed = 80
+local damping = 200
+
+-- Toggle state for hunger and thirst management
+local giveHungerEnabled = false
+
+-- Function to enable strong noclip for the character
+local function enableNoclip()
+    for _, part in pairs(character:GetDescendants()) do
+        if part:IsA("BasePart") or part:IsA("MeshPart") then
+            part.CanCollide = false
+        end
+    end
+end
+
+-- Function to disable strong noclip for the character
+local function disableNoclip()
+    for _, part in pairs(character:GetDescendants()) do
+        if part:IsA("BasePart") or part:IsA("MeshPart") then
+            part.CanCollide = true
+        end
+    end
+end
+
+-- Function to float the player smoothly to the target using BodyPosition and BodyGyro
+local function floatToPlatform(platform)
+    local targetPosition = platform.Position + Vector3.new(0, 5, 0) -- Adjust for height
+    local bodyPosition = Instance.new("BodyPosition")
+    bodyPosition.Position = targetPosition
+    bodyPosition.MaxForce = Vector3.new(floatForce, floatForce, floatForce)
+    bodyPosition.D = damping -- Updated damping
+    bodyPosition.P = vehicleFloatSpeed -- Updated speed
+    bodyPosition.Parent = humanoidRootPart
+
+    local bodyGyro = Instance.new("BodyGyro")
+    bodyGyro.CFrame = humanoidRootPart.CFrame
+    bodyGyro.MaxTorque = Vector3.new(floatForce, floatForce, floatForce)
+    bodyGyro.P = vehicleFloatSpeed -- Updated speed
+    bodyGyro.Parent = humanoidRootPart
+
+    -- Enable noclip to prevent collisions during float
+    enableNoclip()
+
+    -- Keep camera focused on the character
+    RunService:BindToRenderStep("FollowCharacter", Enum.RenderPriority.Camera.Value, function()
+        camera.CFrame = CFrame.new(camera.CFrame.Position, humanoidRootPart.Position)
+    end)
+
+    humanoidRootPart.Anchored = true
+    wait(1)
+    humanoidRootPart.Anchored = false
+
+    -- Ensure the player stays on the platform
+    humanoidRootPart.Position = targetPosition
+    wait(5) -- Keep non-collidable for a while
+    disableNoclip() -- Restore collision
+
+    -- Unbind the render step to stop following the character
+    RunService:UnbindFromRenderStep("FollowCharacter")
+end
+
+-- Function to simulate the thirst action using the correct water part
+local function simulateThirstAction()
+    local monsterMadnessArea = game:GetService("Workspace"):FindFirstChild("GameMap"):FindFirstChild("Decorations"):FindFirstChild("Monster Madness Area")
+    local water = monsterMadnessArea and monsterMadnessArea:FindFirstChild("Water")
+
+    if water then
+        local A_1 = water -- Reference the water part directly
+        local A_2 = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.p
+        local Event = game:GetService("Workspace").GameEvents.addThirst
+        Event:FireServer(A_1, A_2)
+    else
+        print("Water part not found in Monster Madness Area.")
+    end
+end
+
+-- Function to manage hunger and thirst loop
+local function HungerLoop()
+    while giveHungerEnabled do
+        wait(6) -- Adjust interval to 6 seconds
+        -- Check if FernStorage exists before accessing Fern
+        local fernStorage = game.Workspace:FindFirstChild("FernStorage")
+        local fern = fernStorage and fernStorage:FindFirstChild("Fern")
+
+        if fern then
+            print("Fern found in FernStorage, firing EatPlant event and simulating drinking water.")
+            for i = 1, 10 do
+                game.Workspace.GameEvents.EatPlant:FireServer(fern, 10) -- Increase hunger
+            end
+            simulateThirstAction() -- Simulate drinking action
+        else
+            print("Fern not found in FernStorage.")
+        end
+    end
+end
+
+local function startHungerLoop()
+    if not giveHungerEnabled then
+        print("Starting hunger loop.")
+        giveHungerEnabled = true
+        spawn(HungerLoop)
+    else
+        print("Hunger loop already running.")
+    end
+end
+
+local function stopHungerLoop()
+    if giveHungerEnabled then
+        print("Stopping hunger loop.")
+        giveHungerEnabled = false
+    else
+        print("Hunger loop is not running.")
+    end
+end
+
+-- Function to apply the region bonus effects to the player
+local function applyRegionBonus()
+    local serverValues = workspace:FindFirstChild("ServerValues")
+    if serverValues then
+        local serverBonus = serverValues:FindFirstChild("ServerBonus")
+        if serverBonus then
+            local currentRegionBonus = serverBonus:FindFirstChild("CurrentRegionBonus")
+            if currentRegionBonus then
+                local replicatedStorage = game:GetService("ReplicatedStorage")
+                local regionsFolder = replicatedStorage:FindFirstChild("Regions")
+                if regionsFolder then
+                    local regionFolder = regionsFolder:FindFirstChild(currentRegionBonus.Value)
+                    if regionFolder then
+                        local referenceBrick = regionFolder:FindFirstChildWhichIsA("Part")
+                        if referenceBrick then
+                            player:SetAttribute("Region", currentRegionBonus.Value)
+                            player:SetAttribute("RegionName", currentRegionBonus.Value)
+                            referenceBrick.Position = player.Character.HumanoidRootPart.Position
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+
+-- Function to handle region bonus update
+local function handleRegionBonusUpdate()
+    while autoFarmRunning do
+        -- Check for region bonus update
+        local serverValues = workspace:FindFirstChild("ServerValues")
+        if serverValues then
+            local serverBonus = serverValues:FindFirstChild("ServerBonus")
+            if serverBonus then
+                local currentRegionBonus = serverBonus:FindFirstChild("CurrentRegionBonus")
+                if currentRegionBonus then
+                    local lastBonus = player:GetAttribute("CurrentRegionBonus")
+                    if lastBonus ~= currentRegionBonus.Value then
+                        -- Region bonus has updated, reapply
+                        player:SetAttribute("CurrentRegionBonus", currentRegionBonus.Value)
+                        -- Disable and re-enable the region bonus
+                        applyRegionBonus()
+                        print("Region bonus updated and reapplied.")
+                    end
+                end
+            end
+        end
+        wait(10)
+    end
+end
+
+-- Function to create a platform for the player
+local function createPlatformForPlayer(player)
+    local platform = Instance.new("Part")
+    platform.Size = Vector3.new(100, 1, 100) -- Adjust size as needed to fit the dinosaurs
+    platform.Position = Vector3.new(-825, 7954, 3603) + Vector3.new(0, 0, player.UserId % 1000) -- Unique position for each player
+    platform.Anchored = true
+    platform.Name = "DinoPlatform_" .. player.UserId
+    platform.Parent = workspace
+
+    print("Created platform for player:", player.Name, "at position:", platform.Position)
+    return platform
+end
+
+-- Function to move dinosaur to platform
+local function moveDinosaurToPlatform(dinosaur, platform)
+    local humanoidRootPart = dinosaur:FindFirstChild("HumanoidRootPart") or dinosaur:FindFirstChild("Torso") or dinosaur:FindFirstChild("UpperTorso")
+    if not humanoidRootPart then
+        warn("Dinosaur does not have a valid root part")
+        return
+    end
+
+    local goalPosition = platform.Position + Vector3.new(0, 5, 0) -- Adjust for height
+    humanoidRootPart.Position = goalPosition
+    humanoidRootPart.Anchored = true -- Lock in place
+end
+
+-- Toggle to enable or disable the Auto Farm
+local AutoFarmToggle = AutoFarmTab:CreateToggle({
+    Name = "Auto Farm|Argen (Elder)",
+    CurrentValue = false,
+    Flag = "AutoFarmToggle", -- Unique identifier
+    Callback = function(Value)
+        if Value then
+            local platform = createPlatformForPlayer(player)
+            floatToPlatform(platform)
+            startHungerLoop() -- Start managing hunger and thirst
+            autoFarmRunning = true
+            spawn(handleRegionBonusUpdate) -- Handle region bonus updates
+            print("Auto Farm enabled: Floating to platform and feeding started.")
+        else
+            stopHungerLoop() -- Stop managing hunger and thirst
+            autoFarmRunning = false
+            print("Auto Farm disabled.")
+        end
+    end,
+})
+ 
+ local Section = AutoFarmTab:CreateSection("Auto Elder")
+ 
+ local player = game.Players.LocalPlayer
+ local userId = player.UserId
+ local character = player.Character or player.CharacterAdded:Wait()
+ local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+ 
+ local autoElderEnabled = false
+ local floating = false
+ local vehicleGyro, vehicleVelocity
+ local vehicleFloatSpeed = 80 -- Default float speed for Default Dino
+ local floatForce = 50000000 -- Medium float force
+ local antiAFKEnabled = false -- Initial state of the anti-AFK
+ 
+ -- Function to enable noclip
+ local function enableNoclip()
+     for _, part in pairs(character:GetDescendants()) do
+         if part:IsA("BasePart") then
+             part.CanCollide = false
+         end
+     end
+ end
+ 
+ -- Function to disable noclip
+ local function disableNoclip()
+     for _, part in pairs(character:GetDescendants()) do
+         if part:IsA("BasePart") then
+             part.CanCollide = true
+         end
+     end
+ end
+ 
+ -- Create platform at specified position for Auto Elder
+ local function createPlatform()
+     local workspace = game:GetService("Workspace")
+ 
+     -- Platform for Auto Elder
+     local platformElder = Instance.new("Part")
+     platformElder.Size = Vector3.new(200, 1, 200)
+     platformElder.Anchored = true
+     platformElder.Position = Vector3.new(3818, 3707, 2632) -- Updated position for Auto Elder
+     platformElder.BrickColor = BrickColor.new("Bright red")
+     platformElder.Parent = workspace
+ end
+ 
+ -- Function to float the player smoothly to the platform using BodyPosition and BodyGyro
+ local function floatToPlatform()
+     local targetPosition = Vector3.new(3818, 3707, 2632) + Vector3.new(0, 5, 0)
+     local bodyPosition = Instance.new("BodyPosition")
+     bodyPosition.Position = targetPosition
+     bodyPosition.MaxForce = Vector3.new(floatForce, floatForce, floatForce)
+     bodyPosition.D = 500 -- Damping
+     bodyPosition.P = vehicleFloatSpeed -- Speed
+     bodyPosition.Parent = humanoidRootPart
+ 
+     local bodyGyro = Instance.new("BodyGyro")
+     bodyGyro.CFrame = humanoidRootPart.CFrame
+     bodyGyro.MaxTorque = Vector3.new(floatForce, floatForce, floatForce)
+     bodyGyro.P = vehicleFloatSpeed -- Speed
+     bodyGyro.Parent = humanoidRootPart
+ 
+     -- Enable noclip
+     enableNoclip()
+ 
+     humanoidRootPart.Anchored = true
+     wait(1)
+     humanoidRootPart.Anchored = false
+ 
+     wait(5) -- Keep non-collidable for a while
+     disableNoclip() -- Restore collision
+ end
+ 
+ -- Function to add thirst
+ local function addThirst()
+     local water = game:GetService("Workspace").GameMap.Water.Water
+     local position = player.Character.HumanoidRootPart.CFrame.p
+     local event = game:GetService("Workspace").GameEvents.addThirst
+     local success, err = pcall(function()
+         event:FireServer(water, position)
+     end)
+     if not success then
+         warn("Failed to add thirst: "..tostring(err))
+     end
+ end
+ 
+ -- Function to add food
+ local function addFood()
+     local fern = game.Workspace.GameMap.Ferns.Fern
+     local event = game.Workspace.GameEvents.EatPlant
+     local success, err = pcall(function()
+         event:FireServer(fern, 2)
+     end)
+     if not success then
+         warn("Failed to add food: "..tostring(err))
+     end
+ end
+ 
+ -- Start interval to add thirst and food every 2 seconds with safety checks
+ local function startFoodAndWater()
+     while autoElderEnabled do
+         local success, err = pcall(function()
+             addThirst()
+             addFood()
+         end)
+         if not success then
+             warn("Error in startFoodAndWater: "..tostring(err))
+         end
+         wait(2)
+     end
+ end
+ 
+ -- Function to prevent AFK kick
+ local function antiAFK()
+     while antiAFKEnabled do
+         local VirtualUser = game:service('VirtualUser')
+         player.Idled:connect(function()
+             VirtualUser:Button2Down(Vector2.new(0,0), workspace.CurrentCamera.CFrame)
+             wait(1)
+             VirtualUser:Button2Up(Vector2.new(0,0), workspace.CurrentCamera.CFrame)
+         end)
+         wait(10) -- Adjust the wait time as necessary
+     end
+ end
+ 
+ -- Function to handle character respawn or growth
+ local function onCharacterAdded(newCharacter)
+     character = newCharacter
+     humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+     if autoElderEnabled then
+         floatToPlatform()
+     end
+ end
+ 
+ -- Toggle callback function for Auto Elder
+ local function onAutoElderToggle(value)
+     autoElderEnabled = value
+     antiAFKEnabled = value
+     if autoElderEnabled then
+         floatToPlatform()
+         spawn(startFoodAndWater) -- Start adding food and water in a separate thread
+         spawn(antiAFK) -- Start anti-AFK
+     else
+         antiAFKEnabled = false -- Stop anti-AFK
+     end
+ end
+ 
+ -- Connect the character added event to handle respawn and growth
+ player.CharacterAdded:Connect(onCharacterAdded)
+ 
+ -- Ensure the player floats to the respective platform whenever they spawn or grow
+ character.ChildAdded:Connect(function(child)
+     if child:IsA("Humanoid") then
+         child:GetPropertyChangedSignal("Health"):Connect(function()
+             if autoElderEnabled and child.Health > 0 then
+                 floatToPlatform()
+             end
+         end)
+     end
+ end)
+ 
+ -- Re-apply float to platform every few seconds to handle growth stages
+ spawn(function()
+     while true do
+         if autoElderEnabled then
+             floatToPlatform()
+         end
+         wait(5) -- Re-apply every 5 seconds
+     end
+ end)
+ 
+ -- Add the Auto Elder toggle to the UI
+ local Toggle = AutoFarmTab:CreateToggle({
+     Name = "Auto Elder",
+     CurrentValue = false,
+     Flag = "AutoElderToggle",
+     Callback = function(value)
+         onAutoElderToggle(value)
+     end,
+ })
+ 
+ -- Add the Float Speed dropdown to the UI
+ local Dropdown = AutoFarmTab:CreateDropdown({
+     Name = "Dinosaur Type",
+     Options = {"Default Dino", "Heavy Herbivores|Heavy Carnivores"},
+     CurrentOption = "Default Dino",
+     MultipleOptions = false,
+     Flag = "DinoTypeDropdown",
+     Callback = function(option)
+         if option == "Default Dino" then
+             vehicleFloatSpeed = 80
+         elseif option == "Heavy Herbivores|Heavy Carnivores" then
+             vehicleFloatSpeed = 90
+         else
+             print("Invalid option selected.")
+         end
+     end,
+ })
+ 
+ local Section = AutoFarmTab:CreateSection("Bypass Region")
+ 
+ local player = game.Players.LocalPlayer
+ local regionBonusEnabled = false
+ 
+ -- Store the original region and state
+ local originalRegion = player:GetAttribute("Region")
+ local originalRegionName = player:GetAttribute("RegionName")
+ 
+ -- Function to apply the region bonus effects to the player
+ local function applyRegionBonus()
+     local serverValues = workspace:FindFirstChild("ServerValues")
+     if serverValues then
+         local serverBonus = serverValues:FindFirstChild("ServerBonus")
+         if serverBonus then
+             local currentRegionBonus = serverBonus:FindFirstChild("CurrentRegionBonus")
+             if currentRegionBonus then
+                 -- Simulate player's presence within the bonus region's boundary bricks
+                 local replicatedStorage = game:GetService("ReplicatedStorage")
+                 local regionsFolder = replicatedStorage:FindFirstChild("Regions")
+                 if regionsFolder then
+                     local regionFolder = regionsFolder:FindFirstChild(currentRegionBonus.Value)
+                     if regionFolder then
+                         local referenceBrick = regionFolder:FindFirstChildWhichIsA("Part")
+                         if referenceBrick then
+                             -- Force the player's current region attributes
+                             player:SetAttribute("Region", currentRegionBonus.Value)
+                             player:SetAttribute("RegionName", currentRegionBonus.Value)
+ 
+                             -- Simulate the player being within the region's boundary bricks
+                             referenceBrick.Position = player.Character.HumanoidRootPart.Position
+                         end
+                     end
+                 end
+             end
+         end
+     end
+ end
+ 
+ -- Function to reset the player's region to the original state
+ local function resetRegion()
+     player:SetAttribute("Region", originalRegion)
+     player:SetAttribute("RegionName", originalRegionName)
+ end
+ 
+ -- Function to continuously apply the region bonus
+ local function continuousRegionBonus()
+     while regionBonusEnabled do
+         -- Apply bonus only if the current region is not "Wilderness"
+         if player:GetAttribute("Region") ~= "Wilderness" then
+             applyRegionBonus()
+         end
+         wait(10) -- Apply the bonus every 10 seconds
+     end
+ end
+ 
+ -- Toggle callback function
+ local function onRegionBonusToggle(value)
+     regionBonusEnabled = value
+     if regionBonusEnabled then
+         spawn(continuousRegionBonus) -- Start applying the region bonus
+     else
+         resetRegion() -- Reset to original region
+     end
+ end
+ 
+ -- Add the toggle to the UI
+ local Toggle = AutoFarmTab:CreateToggle({
+     Name = "Bypass Region",
+     CurrentValue = false,
+     Flag = "BypassRegionToggle",
+     Callback = function(value)
+         onRegionBonusToggle(value)
+     end,
+ })
+ 
+ -- Ensure region bonus is always active
+ local function ensureRegionBonusAlwaysActive()
+     while true do
+         if regionBonusEnabled then
+             applyRegionBonus()
+         end
+         wait(5) -- Adjust the interval as needed to ensure smooth functionality
+     end
+ end
+ 
+ -- Reapply the region bonus when the player respawns
+ player.CharacterAdded:Connect(function(newCharacter)
+     if regionBonusEnabled then
+         applyRegionBonus()
+     end
+ end)
+ 
+ -- Reapply the region bonus when the player dies
+ player.CharacterRemoving:Connect(function()
+     if regionBonusEnabled then
+         applyRegionBonus()
+     end
+ end)
+ 
+ -- Start the background task to ensure region bonus is always active
+ spawn(ensureRegionBonusAlwaysActive)
+ 
+ local Section = AutoFarmTab:CreateSection("Glass Farm")
+ 
+ local player = game.Players.LocalPlayer
+ local character = player.Character or player.CharacterAdded:Wait()
+ local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+ 
+ -- Default float parameters
+ local floatForce = 50000000000000
+ local vehicleFloatSpeed = 700
+ 
+ local bodyPosition = nil
+ local bodyGyro = nil
+ 
+ -- Function to enable noclip for the character
+ local function enableNoclip()
+     for _, part in pairs(character:GetDescendants()) do
+         if part:IsA("BasePart") then
+             part.CanCollide = false
+         end
+     end
+ end
+ 
+ -- Function to disable noclip for the character
+ local function disableNoclip()
+     for _, part in pairs(character:GetDescendants()) do
+         if part:IsA("BasePart") then
+             part.CanCollide = true
+         end
+     end
+ end
+ 
+ -- Function to float the player smoothly to the target using BodyPosition and BodyGyro
+ local function floatToTarget(target)
+     if not bodyPosition then
+         bodyPosition = Instance.new("BodyPosition")
+         bodyPosition.MaxForce = Vector3.new(floatForce, floatForce, floatForce)
+         bodyPosition.D = 500 -- Damping
+         bodyPosition.P = vehicleFloatSpeed -- Speed
+         bodyPosition.Parent = humanoidRootPart
+     end
+     
+     if not bodyGyro then
+         bodyGyro = Instance.new("BodyGyro")
+         bodyGyro.MaxTorque = Vector3.new(floatForce, floatForce, floatForce)
+         bodyGyro.P = vehicleFloatSpeed -- Speed
+         bodyGyro.Parent = humanoidRootPart
+     end
+ 
+     local targetPosition = target.Position + Vector3.new(0, 5, 0) -- Float above the target (Beam or Chest)
+     bodyPosition.Position = targetPosition
+     enableNoclip() -- Enable noclip while floating
+ end
+ 
+ -- Function to simulate collecting the target
+ local function collectTarget()
+     -- Add any in-game collection logic here if needed
+ end
+ 
+ -- Function to check for Beam in real-time
+ local function checkForBeam()
+     local miscellaneous = workspace:FindFirstChild("GameMap") and workspace.GameMap:FindFirstChild("Miscellaneous")
+     if miscellaneous then
+         for _, beam in pairs(miscellaneous:GetChildren()) do
+             if beam.Name == "Beam" then
+                 return beam
+             end
+         end
+     end
+     return nil
+ end
+ 
+ -- Function to check for Chest in real-time
+ local function checkForChest()
+     local miscellaneous = workspace:FindFirstChild("GameMap") and workspace.GameMap:FindFirstChild("Miscellaneous")
+     if miscellaneous then
+         for _, chest in pairs(miscellaneous:GetChildren()) do
+             if chest.Name == "Bubble" or chest.Name == "Chest" then
+                 return chest
+             end
+         end
+     end
+     return nil
+ end
+ 
+ -- Function to add thirst
+ local function addThirst()
+     while true do
+         if not _G.LoopThirst then return end
+         pcall(function()
+             if game:GetService("Workspace").GameMap:FindFirstChild("Water") then
+                 local water = game:GetService("Workspace").GameMap:FindFirstChild("Water")
+                 if game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.p then
+                     local position = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.p
+                     local event = game:GetService("Workspace").GameEvents.addThirst
+                     event:FireServer(water, position)
+                 end
+             end
+         end)
+         wait(4)
+     end
+ end
+ 
+ -- Function to add food
+ local function addFood()
+     while true do
+         if not _G.LoopHunger then return end
+         pcall(function()
+             local fern = game.Workspace.GameMap.Ferns.Fern
+             if fern then
+                 local event = game.Workspace.GameEvents.EatPlant
+                 event:FireServer(fern, 2)
+             end
+         end)
+         wait(4)
+     end
+ end
+ 
+ -- Function to start providing thirst and food continuously
+ local function startFoodAndWater()
+     _G.LoopThirst = true
+     _G.LoopHunger = true
+     spawn(addThirst) -- Start providing thirst in a separate thread
+     spawn(addFood) -- Start providing food in a separate thread
+ end
+ 
+ local function stopFoodAndWater()
+     _G.LoopThirst = false
+     _G.LoopHunger = false
+ end
+ 
+ -- Function to start real-time detection and floating to the Beam or Chest
+ local autoFarmRunning = false
+ 
+ local function startAutoFarming()
+     autoFarmRunning = true
+     startFoodAndWater() -- Start providing thirst and food continuously
+ 
+     while autoFarmRunning do
+         local target = checkForBeam()
+         if not target then
+             target = checkForChest()
+         end
+ 
+         if target then
+             floatToTarget(target)
+             wait(6) -- Wait for 6 seconds to simulate collection
+             collectTarget() -- Simulate collecting the target
+         end
+         wait(1) -- Adjust the wait time for checking frequency
+     end
+ end
+ 
+ local function stopAutoFarming()
+     autoFarmRunning = false
+     stopFoodAndWater() -- Stop providing thirst and food
+     
+     if bodyPosition then
+         bodyPosition:Destroy()
+         bodyPosition = nil
+     end
+     
+     if bodyGyro then
+         bodyGyro:Destroy()
+         bodyGyro = nil
+     end
+     
+     disableNoclip() -- Disable noclip when stopping
+ end
+ 
+ -- Handle player respawn and death to continue auto farming
+ local function onCharacterAdded(newCharacter)
+     character = newCharacter
+     humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+     if autoFarmRunning then
+         startAutoFarming()
+     end
+ end
+ 
+ player.CharacterAdded:Connect(onCharacterAdded)
+ 
+ -- Add the Beam/Chest Auto Farm Toggle to Auto Farm Tab
+ AutoFarmTab:CreateToggle({
+     Name = "Glass Beam Auto Farm",
+     CurrentValue = false,
+     Flag = "GlassBeamAutoFarmToggle",
+     Callback = function(value)
+         if value then
+             startAutoFarming()
+         else
+             stopAutoFarming()
+         end
+     end
+ })
+ 
+ local TeleportTab = Window:CreateTab("ANTI AFK|DS TELEPORTER", 4483362458) -- Title, Image
+ 
+ local Section = TeleportTab:CreateSection("Teleport to Maps")
+ 
+ local placeIds = {
+     ["Homelands Map"] = 16211666354,
+     ["Default Map 2018-2019"] = 15918631033,
+     ["Gallus Island"] = 794299040
+ }
+ 
+ local function teleportToPlace(placeId)
+     game:GetService("TeleportService"):Teleport(placeId, game.Players.LocalPlayer)
+ end
+ 
+ for mapName, placeId in pairs(placeIds) do
+     TeleportTab:CreateButton({
+         Name = mapName,
+         Callback = function()
+             teleportToPlace(placeId)
+         end
+     })
+ end
+ 
+ local Section = TeleportTab:CreateSection("Anti AFK")
+ 
+ local player = game.Players.LocalPlayer
+ local antiAFKEnabled = false
+ 
+ -- Function to prevent AFK kick
+ local function antiAFK()
+     while true do
+         local VirtualUser = game:service('VirtualUser')
+         player.Idled:connect(function()
+             VirtualUser:Button2Down(Vector2.new(0,0), workspace.CurrentCamera.CFrame)
+             wait(1)
+             VirtualUser:Button2Up(Vector2.new(0,0), workspace.CurrentCamera.CFrame)
+         end)
+         wait(10) -- Adjust the wait time as necessary
+     end
+ end
+ 
+ -- Callback function for the Anti-AFK button
+ local function onAntiAFKButton()
+     if not antiAFKEnabled then
+         antiAFKEnabled = true
+         spawn(antiAFK)
+     end
+ end
+ 
+ -- Add the Anti-AFK button to the PlayerTab
+ local Button = TeleportTab:CreateButton({
+     Name = "Enable Anti-AFK",
+     Callback = function()
+         onAntiAFKButton()
+     end,
+ })
+ 
+ local ChristmasTab = Window:CreateTab("Christmas Event", 4483362458) -- Title, Image
+ 
+ local player = game.Players.LocalPlayer
+ local character = player.Character or player.CharacterAdded:Wait()
+ local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+ 
+ -- Default float parameters
+ local floatForce = 50000000000000
+ local vehicleFloatSpeed = 700
+ 
+ local bodyPosition = nil
+ local bodyGyro = nil
+ 
+ local giveHungerEnabled = false
+ 
+ -- Function to enable noclip for the character
+ local function enableNoclip()
+     for _, part in pairs(character:GetDescendants()) do
+         if part:IsA("BasePart") then
+             part.CanCollide = false
+         end
+     end
+ end
+ 
+ -- Function to disable noclip for the character
+ local function disableNoclip()
+     for _, part in pairs(character:GetDescendants()) do
+         if part:IsA("BasePart") then
+             part.CanCollide = true
+         end
+     end
+ end
+ 
+ -- Function to float the player smoothly to the target using BodyPosition and BodyGyro
+ local function floatToTarget(target)
+     if not bodyPosition then
+         bodyPosition = Instance.new("BodyPosition")
+         bodyPosition.MaxForce = Vector3.new(floatForce, floatForce, floatForce)
+         bodyPosition.D = 500 -- Damping
+         bodyPosition.P = vehicleFloatSpeed -- Speed
+         bodyPosition.Parent = humanoidRootPart
+     end
+     
+     if not bodyGyro then
+         bodyGyro = Instance.new("BodyGyro")
+         bodyGyro.MaxTorque = Vector3.new(floatForce, floatForce, floatForce)
+         bodyGyro.P = vehicleFloatSpeed -- Speed
+         bodyGyro.Parent = humanoidRootPart
+     end
+ 
+     local targetPosition = target.Position + Vector3.new(0, 5, 0) -- Float above the target (Coal)
+     bodyPosition.Position = targetPosition
+     enableNoclip() -- Enable noclip while floating
+ end
+ 
+ -- Function to simulate holding the "F" key
+ local function holdFKey(duration)
+     local VirtualUser = game:GetService("VirtualUser")
+     VirtualUser:CaptureController()
+     
+     -- Simulate holding the "F" key
+     VirtualUser:SetKeyDown("f")
+     wait(duration) -- Hold the key for the specified duration
+     VirtualUser:SetKeyUp("f")
+ end
+ 
+ -- Function to check for Coal in real-time
+ local function checkForCoal()
+     local coalStorage = workspace:FindFirstChild("MiscellaneousStorage") and workspace.MiscellaneousStorage:FindFirstChild("CoalStorage")
+     if coalStorage then
+         for _, coal in pairs(coalStorage:GetChildren()) do
+             if coal.Name == "Coal" then
+                 return coal
+             end
+         end
+     end
+     return nil
+ end
+ 
+ -- Function to simulate the thirst action using the correct water part
+ local function simulateThirstAction()
+     local monsterMadnessArea = game:GetService("Workspace"):FindFirstChild("GameMap"):FindFirstChild("Decorations"):FindFirstChild("Monster Madness Area")
+     local water = monsterMadnessArea and monsterMadnessArea:FindFirstChild("Water")
+ 
+     if water then
+         local A_1 = water -- Reference the water part directly
+         local A_2 = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.p
+         local Event = game:GetService("Workspace").GameEvents.addThirst
+         Event:FireServer(A_1, A_2)
+     else
+         print("Water part not found in Monster Madness Area.")
+     end
+ end
+ 
+ -- Function to manage hunger and thirst loop
+ local function HungerLoop()
+     while giveHungerEnabled do
+         wait(5) -- Delay of 5 seconds
+         -- Check if FernStorage exists before accessing Fern
+         local fernStorage = game.Workspace:FindFirstChild("FernStorage")
+         local fern = fernStorage and fernStorage:FindFirstChild("Fern")
+ 
+         if fern then
+             print("Fern found in FernStorage, firing EatPlant event and simulating drinking water.")
+             game.Workspace.GameEvents.EatPlant:FireServer(fern, 10) -- Increase hunger
+             simulateThirstAction() -- Simulate drinking action
+         else
+             print("Fern not found in FernStorage.")
+         end
+     end
+ end
+ 
+ local function startHungerLoop()
+     if not giveHungerEnabled then
+         print("Starting hunger loop.")
+         giveHungerEnabled = true
+         spawn(HungerLoop)
+     else
+         print("Hunger loop already running.")
+     end
+ end
+ 
+ local function stopHungerLoop()
+     if giveHungerEnabled then
+         print("Stopping hunger loop.")
+         giveHungerEnabled = false
+     else
+         print("Hunger loop is not running.")
+     end
+ end
+ 
+ -- Function to add thirst
+ local function addThirst()
+     while true do
+         if not _G.LoopThirst then return end
+         pcall(function()
+             if game:GetService("Workspace").GameMap:FindFirstChild("Water") then
+                 local water = game:GetService("Workspace").GameMap:FindFirstChild("Water")
+                 if game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.p then
+                     local position = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.p
+                     local event = game:GetService("Workspace").GameEvents.addThirst
+                     event:FireServer(water, position)
+                 end
+             end
+         end)
+         wait(4)
+     end
+ end
+ 
+ -- Function to add food
+ local function addFood()
+     while true do
+         if not _G.LoopHunger then return end
+         pcall(function()
+             local fern = game.Workspace.GameMap.Ferns.Fern
+             if fern then
+                 local event = game.Workspace.GameEvents.EatPlant
+                 event:FireServer(fern, 2)
+             end
+         end)
+         wait(4)
+     end
+ end
+ 
+ -- Function to start providing thirst and food continuously
+ local function startFoodAndWater()
+     _G.LoopThirst = true
+     _G.LoopHunger = true
+     spawn(addThirst) -- Start providing thirst in a separate thread
+     spawn(addFood) -- Start providing food in a separate thread
+ end
+ 
+ local function stopFoodAndWater()
+     _G.LoopThirst = false
+     _G.LoopHunger = false
+ end
+ 
+ -- Function to start real-time detection and floating to the Coal
+ local autoFarmRunning = false
+ 
+ local function startAutoFarming()
+     autoFarmRunning = true
+     startFoodAndWater() -- Start providing thirst and food continuously
+     startHungerLoop() -- Start hunger and thirst loop
+ 
+     while autoFarmRunning do
+         local target = checkForCoal()
+ 
+         if target then
+             floatToTarget(target)
+             wait(2) -- Shorter wait to quickly move to the next coal
+             holdFKey(3) -- Hold the "F" key for 3 seconds to simulate collection (adjust duration as needed)
+         end
+         wait(1) -- Adjust the wait time for checking frequency
+     end
+ end
+ 
+ local function stopAutoFarming()
+     autoFarmRunning = false
+     stopFoodAndWater() -- Stop providing thirst and food
+     stopHungerLoop() -- Stop hunger loop
+     
+     if bodyPosition then
+         bodyPosition:Destroy()
+         bodyPosition = nil
+     end
+     
+     if bodyGyro then
+         bodyGyro:Destroy()
+         bodyGyro = nil
+     end
+     
+     disableNoclip() -- Disable noclip when stopping
+ end
+ 
+ -- Handle player respawn and death to continue auto farming
+ local function onCharacterAdded(newCharacter)
+     character = newCharacter
+     humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+     if autoFarmRunning then
+         startAutoFarming()
+     end
+ end
+ 
+ player.CharacterAdded:Connect(onCharacterAdded)
+ 
+ -- Add the Coal Auto Farm Toggle to Auto Farm Tab
+ ChristmasTab:CreateToggle({
+     Name = "Coal Auto Farm",
+     CurrentValue = false,
+     Flag = "CoalAutoFarmToggle",
+     Callback = function(value)
+         if value then
+             startAutoFarming()
+         else
+             stopAutoFarming()
+         end
+     end,
+ })
+ 
+ local Section = TeleportTab:CreateSection("Christmas Event")
+ 
+ local coalESPEnabled = false
+ 
+ -- Function to create ESP for coal
+ local function createCoalESP()
+     while coalESPEnabled do
+         for _, coal in pairs(workspace.MiscellaneousStorage.CoalStorage:GetChildren()) do
+             if not coal:FindFirstChild("ESPBox") then
+                 local espBox = Instance.new("BoxHandleAdornment")
+                 espBox.Name = "ESPBox"
+                 espBox.Parent = coal
+                 espBox.Adornee = coal
+                 espBox.Size = coal.Size * 5 -- Make the ESP box 5 times larger
+                 espBox.ZIndex = 10
+                 espBox.AlwaysOnTop = true
+                 espBox.Color3 = Color3.new(1, 0, 0) -- Red color for visibility
+                 espBox.Transparency = 0.5
+             end
+         end
+         wait(1) -- Adjust the wait time as necessary to check for new coals
+     end
+ end
+ 
+ -- Function to remove ESP for coal
+ local function removeCoalESP()
+     for _, coal in pairs(workspace.MiscellaneousStorage.CoalStorage:GetChildren()) do
+         local espBox = coal:FindFirstChild("ESPBox")
+         if espBox then
+             espBox:Destroy()
+         end
+     end
+ end
+ 
+ -- Toggle to enable or disable the Coal ESP
+ local Toggle = ChristmasTab:CreateToggle({
+     Name = "Enable Coal ESP",
+     CurrentValue = false,
+     Flag = "CoalESPToggle", -- Unique identifier
+     Callback = function(Value)
+         coalESPEnabled = Value
+         if coalESPEnabled then
+             spawn(createCoalESP)
+             print("Coal ESP enabled.")
+         else
+             removeCoalESP()
+             print("Coal ESP disabled.")
+         end
+     end,
+ })
+ 
+ local Section = ChristmasTab:CreateSection("Lightbulb Farm")
+ 
+ -- Function to create ESP for Christmas Lightbulbs
+ local function createChristmasLightbulbESP()
+     for _, lightbulb in pairs(workspace.MiscellaneousStorage.ChristmasLightStorage:GetChildren()) do
+         if not lightbulb:FindFirstChild("ESPBox") then
+             local espBox = Instance.new("BoxHandleAdornment")
+             espBox.Name = "ESPBox"
+             espBox.Parent = lightbulb
+             espBox.Adornee = lightbulb
+             espBox.Size = Vector3.new(5, 5, 5) -- Set a fixed size for the ESP box
+             espBox.ZIndex = 10
+             espBox.AlwaysOnTop = true
+             espBox.Color3 = Color3.new(0, 1, 0) -- Green color for visibility
+             espBox.Transparency = 0.5
+         end
+     end
+ end
+ 
+ -- Function to remove ESP for Christmas Lightbulbs
+ local function removeChristmasLightbulbESP()
+     for _, lightbulb in pairs(workspace.MiscellaneousStorage.ChristmasLightStorage:GetChildren()) do
+         local espBox = lightbulb:FindFirstChild("ESPBox")
+         if espBox then
+             espBox:Destroy()
+         end
+     end
+ end
+ 
+ -- Function to continuously update ESP for Christmas Lightbulbs
+ local function updateChristmasLightbulbESP()
+     while true do
+         createChristmasLightbulbESP() -- Create ESP for new lightbulbs
+         wait(5) -- Update every 5 seconds
+     end
+ end
+ 
+ -- Toggle to enable or disable the Christmas Lightbulb ESP
+ local Toggle = ChristmasTab:CreateToggle({
+     Name = "Enable Christmas Lightbulb ESP",
+     CurrentValue = false,
+     Flag = "ChristmasLightbulbESPToggle", -- Unique identifier
+     Callback = function(Value)
+         if Value then
+             spawn(updateChristmasLightbulbESP)
+             print("Christmas Lightbulb ESP enabled.")
+         else
+             removeChristmasLightbulbESP()
+             print("Christmas Lightbulb ESP disabled.")
+         end
+     end,
+ })
